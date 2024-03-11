@@ -49,56 +49,56 @@ function WeatherSetup() {
 
         <div class="box1">
           <h1>Timings Setter</h1>
-          <h1 class="time">Start Time:</h1>
-          <h1 class="time" id = "end">End Time:</h1>
+          <h1 className={styles.time}>Start Time:</h1>
+          <h1 className={styles.time} id = "end">End Time:</h1>
         </div>
 
         <div class="SliderWrap">
-          <input type="range" min="0" max="26" value="0" step="1" class="slider" id="slider"></input>
+          <input type="range" min="0" max="26" step="1" className={styles.slider}></input>
         </div>
        
 
         <div className={styles.long} id="one">.</div>
-        <div class="long" id="seven">.</div>
-        <div class="long" id="thirteen">.</div>
-        <div class="long" id="nineteen">.</div>
-        <div class="long" id="twentyfive">.</div>
+        <div className={styles.long} id="seven">.</div>
+        <div className={styles.long} id="thirteen">.</div>
+        <div className={styles.long} id="nineteen">.</div>
+        <div className={styles.long} id="twentyfive">.</div>
 
-        <div class="short" id="two">.</div>
-        <div class="short" id="three">.</div>
-        <div class="short" id="four">.</div>
-        <div class="short" id="five">.</div>
-        <div class="short" id="six">.</div>
-        <div class="short" id="eight">.</div>
-        <div class="short" id="nine">.</div>
-        <div class="short" id="ten">.</div>
-        <div class="short" id="eleven">.</div>
-        <div class="short" id="twelve">.</div>
-        <div class="short" id="fourteen">.</div>
-        <div class="short" id="fifteen">.</div>
-        <div class="short" id="sixteen">.</div>
-        <div class="short" id="seventeen">.</div>
-        <div class="short" id="eighteen">.</div>
-        <div class="short" id="twenty">.</div>
-        <div class="short" id="twentyone">.</div>
-        <div class="short" id="twentytwo">.</div>
-        <div class="short" id="twentythree">.</div>
-        <div class="short" id="twentyfour">.</div>
+        <div className={styles.short} id="two">.</div>
+        <div className={styles.short} id="three">.</div>
+        <div className={styles.short} id="four">.</div>
+        <div className={styles.short} id="five">.</div>
+        <div className={styles.short} id="six">.</div>
+        <div className={styles.short} id="eight">.</div>
+        <div className={styles.short} id="nine">.</div>
+        <div className={styles.short} id="ten">.</div>
+        <div className={styles.short} id="eleven">.</div>
+        <div className={styles.short} id="twelve">.</div>
+        <div className={styles.short} id="fourteen">.</div>
+        <div className={styles.short} id="fifteen">.</div>
+        <div className={styles.short} id="sixteen">.</div>
+        <div className={styles.short} id="seventeen">.</div>
+        <div className={styles.short} id="eighteen">.</div>
+        <div className={styles.short} id="twenty">.</div>
+        <div className={styles.short} id="twentyone">.</div>
+        <div className={styles.short} id="twentytwo">.</div>
+        <div className={styles.short} id="twentythree">.</div>
+        <div className={styles.short} id="twentyfour">.</div>
 
-        <h1 class="smallTime">12</h1>
-        <h1 class="smallTime" id="sixAM">6</h1>
-        <h1 class="smallTime" id="twelveAM">12</h1>
-        <h1 class="smallTime" id="sixPM">6</h1>
-        <h1 class="smallTime" id = "twelvePM">12</h1>
+        <h1 className={styles.smallTime}>12</h1>
+        <h1 className={styles.smallTime} id="sixAM">6</h1>
+        <h1 className={styles.smallTime} id="twelveAM">12</h1>
+        <h1 className={styles.smallTime} id="sixPM">6</h1>
+        <h1 className={styles.smallTime} id = "twelvePM">12</h1>
 
-        <h1 class="smalltext">am</h1>
-        <h1 class="smalltext" id="am1">am</h1>
-        <h1 class="smalltext" id="pm1">pm</h1>
-        <h1 class="smalltext" id="pm2">pm</h1>
-        <h1 class="smalltext" id="am2">am</h1>
+        <h1 className={styles.smalltext}>am</h1>
+        <h1 className={styles.smalltext} id="am1">am</h1>
+        <h1 className={styles.smalltext} id="pm1">pm</h1>
+        <h1 className={styles.smalltext} id="pm2">pm</h1>
+        <h1 className={styles.smalltext} id="am2">am</h1>
 
 
-        <div class="box2">
+        <div className={styles.box2}>
           <h1>Campus Finder</h1>
         </div>
 
@@ -111,11 +111,11 @@ function WeatherSetup() {
         {selectedPlaces.length > 0 && (
           <div>
             <h2>Selected Places:</h2>
-            <ul class="results">
+            <ul className={styles.results}>
               {selectedPlaces.map((place, index) => (
                 <li key={index}>
                   {place.formatted_address}
-                  <button class="delete" onClick={() => removePlace(index)}>x</button>
+                  <button className={styles.delete} onClick={() => removePlace(index)}>x</button>
                 </li>
               ))}
             </ul>
