@@ -1,6 +1,6 @@
 import Location from "./Location";
-import TomorrowTemp from "./TomorrowTemp/TomorrowTemp";
-import Time from "./Time/Time";
+import TomorrowTemp from "../TomorrowTemp/TomorrowTemp";
+import Time from "../Time/Time";
 import styles from './WeatherHeader.module.css'
 
 function WeatherHeader() {
