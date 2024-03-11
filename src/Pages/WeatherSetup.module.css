@@ -26,7 +26,7 @@
 }
 
 
-h1{
+.container, h1{
     font-family: Cambria;
     text-align: center;
     color: black;
@@ -40,7 +40,7 @@ h1{
     padding-left: 3rem;
 }
 
-#end {
+.container, #end {
     padding-top: 20rem;
 }
 
@@ -201,20 +201,20 @@ h1{
     left: 6.1rem;
     font-size: 130%;
 }
-#am1{
+.container, #am1{
     left: 14.8rem
 }
-#pm1{
+.container, #pm1{
     left: 23.4rem;
 }
-#pm2{
+.container, #pm2{
     left: 32rem;
 }
-#am2{
+.container, #am2{
     left: 40.7rem;
 }
 
-form {
+.form {
     background-color: white;
     width: 25rem;
     height: 3rem;
@@ -224,13 +224,13 @@ form {
     align-items: center;
 }
 
-#form{
+.form, #form{
     position: absolute;
     top: 12.2rem;
     left: 52rem;
 }
 
-input[type="search"] {
+.searchInput {
     all: unset;
     font: 16px system-ui;
     color: black;
@@ -245,7 +245,7 @@ input[type="search"] {
     opacity: 0.7; 
 }
 
-button {
+.button {
     all: unset;
     cursor: pointer;
     width: 44px;
