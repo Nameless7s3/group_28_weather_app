@@ -1,4 +1,4 @@
-import styles from './WeatherSetup.module.css';
+import './WeatherSetup.css';
 
 import React, { useState, useEffect } from 'react';
 
@@ -35,6 +35,8 @@ function WeatherSetup() {
   const removePlace = index => {
     setSelectedPlaces(prevPlaces => prevPlaces.filter((place, i) => i !== index));
   };
+
+  
   
 
   return (
@@ -45,7 +47,7 @@ function WeatherSetup() {
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&key=AIzaSyA_FAELnKYg6T9uKDOvHF253FWaLR9Iaoc"></script>
     <body>
-      <div className={styles.WeatherSetup} class="container">
+      <div classname>
 
         <div class="box1">
           <h1>Timings Setter</h1>
@@ -54,8 +56,21 @@ function WeatherSetup() {
         </div>
 
         <div class="SliderWrap">
-          <input type="range" min="0" max="26" value="0" step="1" class="slider" id="slider"></input>
+          <input type="range" min="0" max="26" step="1" class="slider" id="slider"></input>
+          <span class="value">0</span>
         </div>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                var slider = document.querySelector('.slider');
+                var value = document.querySelector('.value');
+                function changeValue(){
+                    value.textContent = slider.value;
+                }
+                slider.addEventListener('input', changeValue);
+                changeValue();
+            });
+        </script>
        
 
         <div class="long" id="one">.</div>
