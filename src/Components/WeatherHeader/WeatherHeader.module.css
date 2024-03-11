@@ -1,0 +1,8 @@
+.WeatherHeader{
+    display: flex;
+    gap: 10pc;
+}
+
+.WeatherHeader, .flexbox_element{
+    margin: 1pc;
+}
