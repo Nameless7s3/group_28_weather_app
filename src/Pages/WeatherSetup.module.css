@@ -1,0 +1,286 @@
+body{
+    background-color: rgb(111, 165, 183);
+
+}
+
+
+.container{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1.5rem;
+   
+    /* grid-template-rows: repeat(0, 1fr); */
+}
+
+.box1{
+    grid-column: 1;
+    background-color: lightgray;
+    margin-top: 1.7rem;
+    height: 45rem;
+}
+
+.box2{
+    grid-column: 2;
+    background-color: lightgray;
+    margin-top: 1.7rem;
+}
+
+
+h1{
+    font-family: Cambria;
+    text-align: center;
+    color: black;
+}
+
+/* Start and end time text */
+.time{
+    text-align: left;
+    position: relative;
+    padding-top: 5rem;
+    padding-left: 3rem;
+}
+
+#end {
+    padding-top: 20rem;
+}
+
+
+.SliderWrap{
+    grid-column: 1;
+    position: absolute;
+    top: 23rem;
+    left: 4.75rem;
+}
+
+
+.slider {
+    -webkit-appearance: none;
+    width: 467%;
+    height: 7px;
+    border-radius: 5px;
+    background: black;
+    outline: none;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+  
+
+  
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    position: relative;
+    z-index: 10;
+    background: rgb(111, 165, 183);
+    box-shadow: 0 0 0 4px white;
+    cursor: pointer;
+}
+
+
+ 
+.long{
+    padding-left: 0.01rem;
+    background-color: black;
+    position: absolute;
+    height: 1.5rem;
+    top: 24.2rem;
+   
+}
+.short{
+    padding-left: 0.01rem;
+    background-color: black;
+    position: absolute;
+    color: transparent;
+    height: 0.7rem;
+    top: 24.55rem;
+}
+
+#one{
+    left: 6.9rem;
+}
+#seven{
+    left: 15.55rem;
+}
+#thirteen{
+    left: 24.2rem;
+}
+#nineteen{
+    left: 32.77rem;
+}
+#twentyfive{
+    left: 41.4rem;
+}
+#two{
+    left: 8.42rem;
+}
+#three{
+    left: 9.86rem;
+}
+#four{
+    left: 11.25rem;
+}
+#five{
+    left: 12.7rem;
+}
+#six{
+    left: 14.15rem;
+}
+#eight{
+    left: 17rem;
+}
+#nine{
+    left: 18.45rem;
+}
+#ten{
+    left: 19.85rem;
+}
+#eleven{
+    left: 21.3rem;
+}
+#twelve{
+    left: 22.75rem;
+}
+#fourteen{
+    left: 25.6rem;
+}
+#fifteen{
+    left: 27rem;
+}
+#sixteen{
+    left: 28.45rem;
+}
+#seventeen{
+    left: 29.9rem;
+}
+#eighteen{
+    left: 31.35rem;
+}
+#twenty{
+    left: 34.22rem;
+}
+#twentyone{
+    left: 35.6rem;
+}
+#twentytwo{
+    left: 37.1rem;
+}
+#twentythree{
+    left: 38.5rem;
+}
+#twentyfour{
+    left: 39.95rem;
+}
+
+
+
+.smallTime{
+    position: absolute;
+    top: 25.5rem;
+    left: 6.2rem;
+    font-size: 130%;
+}
+#sixAM{
+    left: 15.3rem;
+}
+#twelveAM{
+    left: 23.55rem;
+}
+#sixPM{
+    left: 32.5rem;
+}
+#twelvePM{
+    left: 40.8rem;
+}
+
+.smalltext{
+    position: absolute;
+    top: 27rem;
+    left: 6.1rem;
+    font-size: 130%;
+}
+#am1{
+    left: 14.8rem
+}
+#pm1{
+    left: 23.4rem;
+}
+#pm2{
+    left: 32rem;
+}
+#am2{
+    left: 40.7rem;
+}
+
+form {
+    background-color: white;
+    width: 25rem;
+    height: 3rem;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#form{
+    position: absolute;
+    top: 12.2rem;
+    left: 52rem;
+}
+
+input[type="search"] {
+    all: unset;
+    font: 16px system-ui;
+    color: black;
+    height: 100%;
+    width: 100%;
+    padding: 6px 10px;
+   
+}
+
+::placeholder {
+    color: black;
+    opacity: 0.7; 
+}
+
+button {
+    all: unset;
+    cursor: pointer;
+    width: 44px;
+    height: 44px;
+}
+  
+svg {
+    color: black;
+    fill: currentColor;
+    width: 24px;
+    height: 24px;
+    padding: 10px;
+}
+
+
+
+
+h2,ul{
+    position: absolute;
+    left: 52rem;
+    top: 18rem;
+    font-family: Cambria;
+    font-size: 170%;
+}
+
+.results{
+    position: absolute;
+    left: 52rem;
+    top: 22rem;
+    font-size: 150%;
+}
+
+.delete{
+    font-size: 140%;
+    padding-left: 2rem;
+    color: red;
+    background-color: transparent;
+}
