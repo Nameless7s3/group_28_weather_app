@@ -58,7 +58,7 @@ function WeatherSetup() {
         </div>
        
 
-        <div class="long" id="one">.</div>
+        <div className={styles.long} id="one">.</div>
         <div class="long" id="seven">.</div>
         <div class="long" id="thirteen">.</div>
         <div class="long" id="nineteen">.</div>
