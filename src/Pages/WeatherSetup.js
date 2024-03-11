@@ -1,9 +1,11 @@
+import styles from './WeatherSetup.module.css';
+
 import React, { useState, useEffect } from 'react';
 
 
 
 
-function App() {
+function WeatherSetup() {
   const [selectedPlaces, setSelectedPlaces] = useState([]);
 
   useEffect(() => {
@@ -38,11 +40,12 @@ function App() {
   return (
 
     <>
+    
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>  
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&key=AIzaSyA_FAELnKYg6T9uKDOvHF253FWaLR9Iaoc"></script>
     <body>
-      <div class="container">
+      <div className={styles.WeatherSetup} class="container">
 
         <div class="box1">
           <h1>Timings Setter</h1>
@@ -125,5 +128,4 @@ function App() {
   );
 }
 
-export default App;
-
+export default WeatherSetup;
