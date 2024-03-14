@@ -73,14 +73,14 @@ function WeatherSetup() {
       <div className={styles.container}>
 
         <div className={styles.box1}>
-          <h1>Timings Setter</h1>
+          <h1 className={styles.h1}>Timings Setter</h1>
           <h1 className={styles.time}>Start Time:</h1>
           <h1 className={styles.time} id={styles.end}>End Time:</h1>
         </div>
 
         <div className={styles.SliderWrap}>
-          <input type="range" min="0" max="26" step="1" className={styles.slider}></input>
-          <span className={styles.value}>0</span>
+          <input type="range" min="0" max="24" step="1" className={styles.slider}></input>
+          <span className={styles.value}></span>
         </div>
        
 
@@ -125,7 +125,7 @@ function WeatherSetup() {
 
 
         <div className={styles.box2}>
-          <h1>Campus Finder</h1>
+          <h1 className={styles.h1}>Campus Finder</h1>
         </div>
 
         
@@ -136,7 +136,7 @@ function WeatherSetup() {
         
         {selectedPlaces.length > 0 && (
           <div>
-            <h2>Selected Places:</h2>
+            <h2 className={styles.h2}>Selected Places:</h2>
             <ul className={styles.results}>
               {selectedPlaces.map((place, index) => (
                 <li key={index}>

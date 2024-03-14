@@ -26,7 +26,7 @@ body{
 }
 
 
-h1{
+.h1{
     font-family: Cambria;
     text-align: center;
     color: black;
@@ -49,13 +49,13 @@ h1{
     grid-column: 1;
     position: absolute;
     top: 23rem;
-    left: 4.75rem;
+    left: 6.5rem;
 }
 
 
 .slider {
     -webkit-appearance: none;
-    width: 440%;
+    width: 345%;
     height: 7px;
     border-radius: 5px;
     background: black;
@@ -263,7 +263,7 @@ svg {
 
 
 
-h2,ul{
+.h2,ul{
     position: absolute;
     left: 52rem;
     top: 18rem;
