@@ -7,6 +7,7 @@ import styles from './WeatherSetup.module.css';
 function WeatherSetup() {
   const [selectedPlaces, setSelectedPlaces] = useState([]);
 
+
   useEffect(() => {
     const searchInput = 'searching';
     const loadGoogleMapsScript = () => {
@@ -35,31 +36,46 @@ function WeatherSetup() {
       setSelectedPlaces(prevPlaces => prevPlaces.filter((place, i) => i !== index));
     };
 
-  //   useEffect(() => {
-  //     const slider = document.querySelector(`.${styles.slider}`);
-  //     const value = document.querySelector(`.${styles.value}`);
 
-  //     console.log("Slider element:", slider);
-  //     console.log("Value element:", value);
+    useEffect(() => {
+      const slider = document.querySelector(`.${styles.slider}`);
+      const value = document.querySelector(`.${styles.value}`);
 
-  //     if (slider && value) {
-  //         slider.addEventListener('input', function() {
-  //             value.textContent = slider.value;
-  //         });
-  //         value.textContent = slider.value; // Initialize value
-  //     } else {
-  //         console.error("Slider or value element not found.");
-  //     }
-  // }, [])
+      if (slider && value) {
+        slider.addEventListener('input', function() {
+          value.textContent = slider.value + ":00";
+      });
 
-    // const slider = document.querySelector(`.${styles.slider}`);
-    // const value = document.querySelector(`.${styles.value}`);
-    // function changeValue(){
-    //   value.textContent = slider.value;
-    // }
-    // slider.addEventListener('input', changeValue);
-    // changeValue();
-  
+        value.textContent = slider.value + ":00"; // Initialize value
+      } 
+      
+      else {
+          console.error("Slider or value element not found.");
+      }
+
+    }, [])
+
+
+    useEffect(() => {
+
+      const slider2 = document.querySelector(`.${styles.slider2}`);
+      const value = document.querySelector(`.${styles.value2}`);
+
+      if (slider2 && value) {
+        slider2.addEventListener('input', function() {
+            value.textContent = slider2.value + ":00";
+      });
+      
+        value.textContent = slider2.value + ":00"; // Initialize value
+      } 
+      
+      else {
+          console.error("Slider or value element not found.");
+      }
+      
+    }, [])
+    
+
 
   return (
 
@@ -74,13 +90,21 @@ function WeatherSetup() {
 
         <div className={styles.box1}>
           <h1 className={styles.h1}>Timings Setter</h1>
+          <figure>
+                  <img src="./images/Timing.png" alt="weather_icon" className={styles.TimingPic}/>
+              </figure>
           <h1 className={styles.time}>Start Time:</h1>
           <h1 className={styles.time} id={styles.end}>End Time:</h1>
         </div>
 
         <div className={styles.SliderWrap}>
           <input type="range" min="0" max="24" step="1" className={styles.slider}></input>
-          <span className={styles.value}></span>
+          <span className={styles.value}>00:00</span>
+        </div>
+
+        <div className={styles.SliderWrap}>
+          <input type="range" min="0" max="24" step="1" className={styles.slider2}></input>
+          <span className={styles.value2}>00:00</span>
         </div>
        
 
@@ -126,6 +150,9 @@ function WeatherSetup() {
 
         <div className={styles.box2}>
           <h1 className={styles.h1}>Campus Finder</h1>
+          <figure>
+            <img src="./images/location.png" alt="weather_icon" className={styles.LocationPic}/>
+          </figure>
         </div>
 
         

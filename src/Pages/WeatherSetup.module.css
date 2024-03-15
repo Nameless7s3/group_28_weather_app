@@ -55,17 +55,41 @@ body{
 
 .slider {
     -webkit-appearance: none;
-    width: 345%;
+    width: 430%;
     height: 7px;
     border-radius: 5px;
     background: black;
     outline: none;
     -webkit-transition: .2s;
     transition: opacity .2s;
-
 }
+
   
 .slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    position: relative;
+    z-index: 10;
+    background: rgb(111, 165, 183);
+    box-shadow: 0 0 0 4px white;
+    cursor: pointer;
+}
+
+.slider2 {
+    -webkit-appearance: none;
+    width: 430%;
+    height: 7px;
+    border-radius: 5px;
+    background: black;
+    outline: none;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+.slider2::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
     width: 25px;
@@ -284,8 +308,40 @@ svg {
     color: red;
     background-color: transparent;
 }
-/* 
+
+
 .value{
-    position: relative;
-    color: blue;
-} */
+    position: absolute;
+    color: rgb(111, 165, 183);
+    bottom: 8.2rem;
+    font-size: 520%;
+    left: 11rem;
+    font-family: Cambria;
+}
+
+
+.value2{
+    position: absolute;
+    color: rgb(111, 165, 183);
+    top: 10.6rem;
+    font-size: 520%;
+    left: 11rem;
+    font-family: Cambria;
+}
+
+.LocationPic{
+    position: absolute;
+    top: 2.7rem;
+    left: 59.5rem;
+    width: 3.5rem;
+    height: 3.5rem;
+}
+
+
+.TimingPic{
+    position: absolute;
+    top: 3.1rem;
+    left: 12.5rem;
+    width: 3rem;
+    height: 3rem;
+}
