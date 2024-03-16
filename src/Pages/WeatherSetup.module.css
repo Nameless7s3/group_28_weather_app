@@ -1,6 +1,5 @@
 body{
     background-color: rgb(111, 165, 183);
-
 }
 
 
@@ -8,8 +7,6 @@ body{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 1.5rem;
-   
-    /* grid-template-rows: repeat(0, 1fr); */
 }
 
 .box1{
@@ -262,7 +259,6 @@ input[type="search"] {
     height: 100%;
     width: 100%;
     padding: 6px 10px;
-   
 }
 
 ::placeholder {

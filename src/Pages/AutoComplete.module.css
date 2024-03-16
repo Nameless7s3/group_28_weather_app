@@ -1,0 +1,72 @@
+
+
+.searchBar input {
+  all: unset;
+  font: 16px system-ui;
+  color: black;
+  border-radius: 5px;
+  height: 100%;
+  width: 100%;
+  padding: 6px 10px;
+  background-color: transparent;
+}
+
+.searchBar{
+    position: absolute;
+    top: 0.3rem;
+    left: 0rem;
+    width: 25rem;
+    height: 2.3rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.results {
+    position: absolute;
+    color: black;
+
+    left: 0rem;
+    top: 3rem;
+    font-size: 70%;
+
+    list-style: none;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+
+.searchBar ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+
+}
+
+.searchBar li {
+    padding: 10px;
+    background-color: #fff;
+    border-bottom: 1px solid #ccc;
+  }
+  
+.searchBar li:last-child {
+    border-bottom: none;
+} 
+
+
+
+  
+  
+
+ 
+
+  
+
+
+
+
+
+
