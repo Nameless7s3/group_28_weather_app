@@ -1,34 +1,28 @@
 import TempForFutureDay from "./TempForFutureDay";
-import {getWeatherData} from "../Weather_Data/WeatherData";
-import React, { useState, useEffect } from 'react';
+import {WeatherData} from "../Weather_Data/WeatherData";
+import styles from "./FutureTempsBar.module.css";
+
+const weatherData ={
+  day01Name : "Monday",
+  day01Temp : "11°C",
+  day02Name : "Tuesday",
+  day02Temp : "9°C",
+  day03Name : "Wednesday",
+  day03Temp : "7°C",
+  day04Name : "Thursday",
+  day04Temp : "10°C",
+  day05Name : "Friday",
+  day05Temp : "13°C"
+};
 
 function FutureTempsBar(){
-    const [weatherData, setWeatherData] = useState(null);
-
-    useEffect(() => {
-      const fetchData = async () => {
-        try {
-          const data = await getWeatherData();
-          setWeatherData(data);
-        } catch (error) {
-          console.error('Error fetching weather data:', error);
-        }
-      };
-  
-      fetchData();
-    }, []);
-  
-    // Check if weatherData is null before accessing its properties
-    if (!weatherData) {
-      return <div>Loading...</div>;
-    }
-    return(
-    <div>
-        <TempForFutureDay day={weatherData.day01Name} temperature={weatherData.day01Temp}/>
-        <TempForFutureDay day={weatherData.day02Name} temperature={weatherData.day02Temp}/>
-        <TempForFutureDay day={weatherData.day03Name} temperature={weatherData.day03Temp}/>
-        <TempForFutureDay day={weatherData.day04Name} temperature={weatherData.day04Temp}/>
-    </div>)
+    return(<><WeatherData/>
+    <div className={styles.FutureTempsBarContainer}>
+        <TempForFutureDay day={weatherData.day01Name} temperature={weatherData.day01Temp} className={styles.FutureTemp}/>
+        <TempForFutureDay day={weatherData.day02Name} temperature={weatherData.day02Temp} className={styles.FutureTemp}/>
+        <TempForFutureDay day={weatherData.day03Name} temperature={weatherData.day03Temp} className={styles.FutureTemp}/>
+        <TempForFutureDay day={weatherData.day04Name} temperature={weatherData.day04Temp} className={styles.FutureTemp}/>
+    </div></>)
 }
 
 export default FutureTempsBar;

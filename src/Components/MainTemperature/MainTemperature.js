@@ -2,14 +2,15 @@ import styles from "./MainTemperature.module.css";
 
 function MainTemperature(){
     return(
+        <>
         <div className={styles.MainTemperatureWrapper}>
             <figure>
-                <img src="./images/weather-icon.png" alt="cloudy_icon"/>
+                <img className={styles.MainTempIcon} src="./images/weather-icon.png" alt="cloudy_icon"/>
             </figure>
-            <h1>
+            <h1 className={styles.MainTempReading}>
                 13°C
             </h1>
-        </div>
+        </div></>
     )
 }
 

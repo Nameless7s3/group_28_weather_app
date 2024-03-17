@@ -1,0 +1,9 @@
+.FutureTempsBarContainer{
+    grid-area: FtrTempsBar;
+    background-color: rgb(103, 194, 103);
+}
+
+.FutureTemp{
+    position: relative;
+    background-color: antiquewhite;
+}

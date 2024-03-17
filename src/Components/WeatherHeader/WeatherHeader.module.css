@@ -1,6 +1,9 @@
 .WeatherHeader{
+    grid-area: WeatherHeader;
     display: flex;
     gap: 10pc;
+    background-color: aqua;
+    justify-content: center;
 }
 
 .WeatherHeader, .flexbox_element{

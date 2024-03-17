@@ -6,12 +6,12 @@ import styles from "./WeatherPage.module.css";
 
 function WeatherPage() {
     return(
-        <>
-            <WeatherHeader/>
+        <div className={styles.WeatherPageContainer}>
+            <WeatherHeader className={styles.WeatherHeader}/>
             <MainTemperature/>
             <TempTimeScrollBar/>
             <FutureTempsBar/>
-        </>
+        </div>
     )
 }
 
