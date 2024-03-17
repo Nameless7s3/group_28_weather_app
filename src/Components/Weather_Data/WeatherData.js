@@ -7,7 +7,7 @@ export function getWeatherData(){
         day03Name : "Wednesday",
         day03Temp : "7°C",
         day04Name : "Thursday",
-        day04Temp : "11°C",
+        day04Temp : "10°C",
         day05Name : "Friday",
         day05Temp : "13°C"
     };
