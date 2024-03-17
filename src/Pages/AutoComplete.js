@@ -49,9 +49,14 @@ const Autocomplete = () => {
     setQuery(event.target.value);
   };
 
+  const [selectedPredictions, setSelectedPredictions] = useState([]);
+
   const handlePredictionClick = (prediction) => {
-    // You can define the action you want to perform when a prediction is clicked
-    console.log('Prediction clicked:', prediction);
+    setSelectedPredictions(prevPredictions => [...prevPredictions, prediction]);
+  };
+
+  const removePlace = index => {
+    setSelectedPredictions(prevPlaces => prevPlaces.filter((place, i) => i !== index));
   };
 
   return (
@@ -65,17 +70,25 @@ const Autocomplete = () => {
           onChange={handleInputChange}
         />
       </div>
+
       <ul className={styles.results}>
         {predictions.map((prediction) => (
             <button className={styles.li} key={prediction.place_id} onClick={() => handlePredictionClick(prediction)}>
                 {prediction.description}
-                
             </button>
-
-           
-          
         ))}
+      <p>Selected:</p>
+
       </ul>
+      {/* {selectedPrediction && <p>Selected: {selectedPrediction.description}</p>} */}
+      {selectedPredictions.map((prediction, index) => (
+        <li className={styles.print} key={index}>
+          {prediction.description}
+          <button className= {styles.delete} onClick={() => removePlace(index)}>x</button>          
+          </li>
+          
+      ))}
+
     </div>
   );
 };

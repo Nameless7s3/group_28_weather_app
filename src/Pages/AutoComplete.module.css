@@ -57,6 +57,33 @@
 } 
 
 
+.print {
+  color: rgb(111, 165, 183);
+  position: relative;
+  left: -6rem;
+  top: 21rem;
+
+}
+
+p{
+  color: rgb(111, 165, 183);
+  font-size: 150%;
+  position: relative;
+  margin-top: 8rem;
+  margin-right: 4rem;
+  font-weight: bold;
+}
+
+.delete{
+  position: absolute;
+  left: 20rem;
+  bottom: 1rem;
+  font-size: 140%;
+  color: red;
+  background-color: transparent;
+}
+
+
 
   
   
