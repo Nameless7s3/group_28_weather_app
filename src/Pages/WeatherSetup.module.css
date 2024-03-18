@@ -345,8 +345,8 @@ svg {
 .submitB {
     color: red;
     position: absolute;
-    bottom: 4rem;
-    right: 7rem;
+    top: 30rem;
+    left: 35rem;
     font-size: 120%;
     font-weight: bold;
 }
