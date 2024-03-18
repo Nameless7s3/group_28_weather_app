@@ -6,8 +6,8 @@ function App() {
   return (
     <HashRouter>
       <Routes>
-        <Route path="/" element={<WeatherPage/>}/>
-        <Route path="/weather_setup" element={<WeatherSetup/>}/>
+        <Route path="/" element={<WeatherSetup/>}/>
+        <Route path="/weather_page" element={<WeatherPage/>}/>
       </Routes>
     </HashRouter>
   );
