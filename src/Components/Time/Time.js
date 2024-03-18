@@ -15,7 +15,7 @@ function Time() {
 
 function getCurrentTime(){
     var currentDate = new Date();
-    var formattedMinute = currentDate.getMinutes() < 10 ? "00" + currentDate.getMinutes() : currentDate.getMinutes();
+    var formattedMinute = currentDate.getMinutes() < 10 ? "0" + currentDate.getMinutes() : currentDate.getMinutes();
     return currentDate.getHours() + ":" + formattedMinute;
 }
 
