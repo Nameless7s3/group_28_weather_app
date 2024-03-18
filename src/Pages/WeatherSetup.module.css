@@ -341,3 +341,12 @@ svg {
     width: 3rem;
     height: 3rem;
 }
+
+.submitB {
+    color: red;
+    position: absolute;
+    bottom: 4rem;
+    right: 7rem;
+    font-size: 120%;
+    font-weight: bold;
+}
