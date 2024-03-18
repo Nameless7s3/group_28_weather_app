@@ -97,7 +97,7 @@ const Autocomplete = () => {
       {selectedPredictions.map((prediction, index) => (
         <li className={styles.print} key={index}>
           {prediction.description}
-          <button className= {styles.delete} onClick={() => removePlace(index)}>x</button>          
+          <button type="button"className= {styles.delete} onClick={() => removePlace(index)}>x</button>          
           </li>
           
       ))}
