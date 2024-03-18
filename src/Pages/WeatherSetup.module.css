@@ -1,14 +1,16 @@
+/* This is applied to the entire webpage */
 body{
     background-color: rgb(111, 165, 183);
 }
 
-
+/* This creates a grid for the page for organising each section */
 .container{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 1.5rem;
 }
 
+/* This refers to the left grey box styling */
 .box1{
     grid-column: 1;
     background-color: lightgray;
@@ -16,17 +18,36 @@ body{
     height: 45rem;
 }
 
+/* This refers to the right grey box styling */
 .box2{
     grid-column: 2;
     background-color: lightgray;
     margin-top: 1.7rem;
 }
 
-
+/* This styles the heaadings in both boxes */
 .h1{
     font-family: Cambria;
     text-align: center;
     color: black;
+}
+
+/* This styles the location icon in the right grey box, next to the campus finder */
+.LocationPic{
+    position: absolute;
+    top: 2.7rem;
+    left: 59.5rem;
+    width: 3.5rem;
+    height: 3.5rem;
+}
+
+/* This styles the timing icon in the left grey box, next to the timings setter */
+.TimingPic{
+    position: absolute;
+    top: 3.1rem;
+    left: 12.5rem;
+    width: 3rem;
+    height: 3rem;
 }
 
 /* Start and end time text */
@@ -37,11 +58,12 @@ body{
     padding-left: 3rem;
 }
 
+/* End time text positioning */
 #end {
     padding-top: 20rem;
 }
 
-
+/* Styles the position for the slider on the page so it's in the box */
 .SliderWrap{
     grid-column: 1;
     position: absolute;
@@ -49,7 +71,7 @@ body{
     left: 6.5rem;
 }
 
-
+/* Styles the slider for the timings section */
 .slider {
     -webkit-appearance: none;
     width: 430%;
@@ -61,7 +83,7 @@ body{
     transition: opacity .2s;
 }
 
-  
+/* Styles the first circle on the slider for the user to drag across */
 .slider::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
@@ -75,6 +97,8 @@ body{
     cursor: pointer;
 }
 
+
+/* Styles the second slider for the timings section */
 .slider2 {
     -webkit-appearance: none;
     width: 430%;
@@ -86,6 +110,8 @@ body{
     transition: opacity .2s;
 }
 
+
+/* Styles the first circle on the slider for the user to drag across */
 .slider2::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
@@ -99,6 +125,7 @@ body{
     cursor: pointer;
 }
 
+/* This section styles each of the black lines of the slider */
 
 .long{
     padding-left: 0.01rem;
@@ -197,7 +224,7 @@ body{
 }
 
 
-
+/* This section styles the little text under the slider */
 .smallTime{
     position: absolute;
     top: 25.5rem;
@@ -236,6 +263,27 @@ body{
     left: 40.7rem;
 }
 
+/* This styles the text for the value of the slider of the start time */
+.value{
+    position: absolute;
+    color: rgb(111, 165, 183);
+    bottom: 8.2rem;
+    font-size: 520%;
+    left: 11rem;
+    font-family: Cambria;
+}
+
+/* This section styles the text for the value of the slider of the end time */
+.value2{
+    position: absolute;
+    color: rgb(111, 165, 183);
+    top: 10.6rem;
+    font-size: 520%;
+    left: 11rem;
+    font-family: Cambria;
+}
+
+/* This section styles the search bar */
 form {
     background-color: white;
     width: 25rem;
@@ -246,12 +294,14 @@ form {
     align-items: center;
 }
 
+/* This section positions the search bar */
 #form{
     position: absolute;
     top: 12.2rem;
     left: 52rem;
 }
 
+/* This section styles the search bar input */
 input[type="search"] {
     all: unset;
     font: 16px system-ui;
@@ -261,11 +311,13 @@ input[type="search"] {
     padding: 6px 10px;
 }
 
+/* This styles the text in the search bar */
 ::placeholder {
     color: black;
     opacity: 0.7; 
 }
 
+/* This styles the buttons for the user to click on the search results */
 button {
     all: unset;
     cursor: pointer;
@@ -273,6 +325,7 @@ button {
     height: 44px;
 }
   
+/* This styles the search icon button */
 svg {
     color: black;
     fill: currentColor;
@@ -282,66 +335,7 @@ svg {
 }
 
 
-
-.h2,ul{
-    position: absolute;
-    left: 52rem;
-    top: 18rem;
-    font-family: Cambria;
-    font-size: 170%;
-}
-
-.results{
-    position: absolute;
-    left: 52rem;
-    top: 22rem;
-    font-size: 150%;
-}
-
-.delete{
-    font-size: 140%;
-    padding-left: 2rem;
-    color: red;
-    background-color: transparent;
-}
-
-
-.value{
-    position: absolute;
-    color: rgb(111, 165, 183);
-    bottom: 8.2rem;
-    font-size: 520%;
-    left: 11rem;
-    font-family: Cambria;
-}
-
-
-.value2{
-    position: absolute;
-    color: rgb(111, 165, 183);
-    top: 10.6rem;
-    font-size: 520%;
-    left: 11rem;
-    font-family: Cambria;
-}
-
-.LocationPic{
-    position: absolute;
-    top: 2.7rem;
-    left: 59.5rem;
-    width: 3.5rem;
-    height: 3.5rem;
-}
-
-
-.TimingPic{
-    position: absolute;
-    top: 3.1rem;
-    left: 12.5rem;
-    width: 3rem;
-    height: 3rem;
-}
-
+/* This styles the submit button */
 .submitB {
     color: red;
     position: absolute;

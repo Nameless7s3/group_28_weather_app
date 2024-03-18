@@ -1,5 +1,16 @@
+/* This positions the search bar */
+.searchBar{
+  position: absolute;
+  top: 0.3rem;
+  left: 0rem;
+  width: 25rem;
+  height: 2.3rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
 
-
+/* This styles the input section of the search bar */
 .searchBar input {
   all: unset;
   font: 16px system-ui;
@@ -11,17 +22,7 @@
   background-color: transparent;
 }
 
-.searchBar{
-    position: absolute;
-    top: 0.3rem;
-    left: 0rem;
-    width: 25rem;
-    height: 2.3rem;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
-
+/* This styles the text that appear from the search bar */
 .results {
     position: absolute;
     color: black;
@@ -38,33 +39,26 @@
     gap: 20px;
 }
 
-
+/* This styles the text from the search bar and gets rid of bullet points */
 .searchBar ul {
   list-style-type: none;
   padding: 0;
   margin: 0;
-
 }
 
+/* This styles the list items within the search bar */
 .searchBar li {
     padding: 10px;
     background-color: #fff;
     border-bottom: 1px solid #ccc;
-  }
-  
+}
+
+/* This styles the last list item within the search bar */
 .searchBar li:last-child {
     border-bottom: none;
 } 
 
-
-.print {
-  color: rgb(111, 165, 183);
-  position: relative;
-  left: -6rem;
-  top: 21rem;
-
-}
-
+/* This styles the text for the Selected: heading */
 p{
   color: rgb(111, 165, 183);
   font-size: 150%;
@@ -74,6 +68,15 @@ p{
   font-weight: bold;
 }
 
+/* This styles the selected locations the user chooses which is printed on the screen */
+.print {
+  color: rgb(111, 165, 183);
+  position: relative;
+  left: -6rem;
+  top: 21rem;
+}
+
+/* This styles the delete button marked x next to every selected campus */
 .delete{
   position: absolute;
   left: 20rem;

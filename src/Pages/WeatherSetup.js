@@ -5,9 +5,6 @@ import Autocomplete from './AutoComplete';
 import { useNavigate } from 'react-router-dom';
 
 
-
-
-
 function WeatherSetup() {
 
   const navigate = useNavigate();
@@ -17,17 +14,19 @@ function WeatherSetup() {
   };
   
   
-  
+  // This function allows the user to select the time they want to see the weather using the slider
   useEffect(() => {
+  // Get the slider and its value element
     const slider = document.querySelector(`.${styles.slider}`);
     const value = document.querySelector(`.${styles.value}`);
 
+    // Prints the time on the screen
     if (slider && value) {
       slider.addEventListener('input', function() {
         value.textContent = slider.value + ":00";
       });
 
-      value.textContent = slider.value + ":00"; // Initialize value
+      value.textContent = slider.value + ":00";
     } 
       else {
         console.error("Slider or value element not found.");
@@ -35,18 +34,19 @@ function WeatherSetup() {
 
   }, []);
 
-
+  // This function does the same as the previous one but for the second slider
   useEffect(() => {
-
+    // Get the slider and its value element
     const slider2 = document.querySelector(`.${styles.slider2}`);
     const value = document.querySelector(`.${styles.value2}`);
 
+    // Prints the time on the screen
     if (slider2 && value) {
       slider2.addEventListener('input', function() {
         value.textContent = slider2.value + ":00";
     });
       
-      value.textContent = slider2.value + ":00"; // Initialize value
+      value.textContent = slider2.value + ":00";
     } 
 
     else {
@@ -62,15 +62,17 @@ function WeatherSetup() {
     <body className={styles.body}>
       <div className={styles.container}>
 
+        {/* This is the left grey box which displays the section for the user to select their times */}
         <div className={styles.box1}>
           <h1 className={styles.h1}>Timings Setter</h1>
           <figure>
             <img src="./images/Timing.png" alt="weather_icon" className={styles.TimingPic}/>
           </figure>
-          <h1 className={styles.time}>Start Time:</h1>
-          <h1 className={styles.time} id={styles.end}>End Time:</h1>
+          <h1 className={styles.time}>Start Time:</h1> {/* This is the earliest time they want to see the weather */}
+          <h1 className={styles.time} id={styles.end}>End Time:</h1> {/* This is the lastest time they want to see the weather */}
         </div>
 
+        {/* This displays the sliders for the user to move them both */}
         <div className={styles.SliderWrap}>
           <input type="range" min="0" max="24" step="1" className={styles.slider}></input>
           <span className={styles.value}>00:00</span>
@@ -81,7 +83,7 @@ function WeatherSetup() {
           <span className={styles.value2}>00:00</span>
         </div>
        
-
+        {/* This prints the little black lines and the timings on the slider */}
         <div className={styles.long} id={styles.one}></div>
         <div className={styles.long} id={styles.seven}></div>
         <div className={styles.long} id={styles.thirteen}></div>
@@ -121,7 +123,7 @@ function WeatherSetup() {
         <h1 className={styles.smalltext} id={styles.pm2}>pm</h1>
         <h1 className={styles.smalltext} id={styles.am2}>am</h1>
 
-
+        {/* This displays the campus finder in the right grey box */}
         <div className={styles.box2}>
           <h1 className={styles.h1}> Campus Finder </h1>
           
@@ -130,6 +132,7 @@ function WeatherSetup() {
           </figure>
         </div>
         
+        {/* This allows the user to search for their campus location */}
         <form id={styles.form} role="search">
           <input 
             id={styles.searching} 
@@ -139,13 +142,14 @@ function WeatherSetup() {
             aria-label="Search through site content">
           </input>
           
+          {/* This calls the page where the search results are made using an API */}
           <Autocomplete />
           
-          <button className={styles.button}><svg viewBox="0 0 1024 1024"><path class="path1" d="M848.471 928l-263.059-263.059c-48.941 36.706-110.118 55.059-177.412 55.059-171.294 0-312-140.706-312-312s140.706-312 312-312c171.294 0 312 140.706 312 312 0 67.294-24.471 128.471-55.059 177.412l263.059 263.059-79.529 79.529zM189.623 408.078c0 121.364 97.091 218.455 218.455 218.455s218.455-97.091 218.455-218.455c0-121.364-103.159-218.455-218.455-218.455-121.364 0-218.455 97.091-218.455 218.455z"></path></svg></button>
+          <button type="button" className={styles.button}><svg viewBox="0 0 1024 1024"><path class="path1" d="M848.471 928l-263.059-263.059c-48.941 36.706-110.118 55.059-177.412 55.059-171.294 0-312-140.706-312-312s140.706-312 312-312c171.294 0 312 140.706 312 312 0 67.294-24.471 128.471-55.059 177.412l263.059 263.059-79.529 79.529zM189.623 408.078c0 121.364 97.091 218.455 218.455 218.455s218.455-97.091 218.455-218.455c0-121.364-103.159-218.455-218.455-218.455-121.364 0-218.455 97.091-218.455 218.455z"></path></svg></button>
         
-          <button type="submit" className={styles.submitB} onClick={handleSubmit}>Submit</button>
-        
-        
+          {/* This is the submit button where the user submits their information for the next page */}
+          <button type="button" className={styles.submitB} onClick={handleSubmit}>Submit</button>
+          
         </form>
         
       </div>
