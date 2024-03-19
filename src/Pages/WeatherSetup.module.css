@@ -286,9 +286,9 @@ body{
 /* This section styles the search bar */
 form {
     background-color: white;
-    width: 25rem;
-    height: 3rem;
-    border-radius: 0.3125rem;
+    width: 25%;
+    height: 3%;
+    border-radius: 0.3125%;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -297,8 +297,8 @@ form {
 /* This section positions the search bar */
 #form{
     position: absolute;
-    top: 12.2rem;
-    left: 52rem;
+    top: 12.2%;
+    left: 52%;
 }
 
 /* This section styles the search bar input */
