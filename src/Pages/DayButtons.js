@@ -27,15 +27,15 @@ function WeatherDays() {
 
                 {/* This section contains the buttons for the days of the week to be selected */}
                 <section id={styles.buttons}><div id={styles.buttons2}>
-                <div><button >Monday</button></div>
-                <div><button>Tuesday</button></div>
-                <div><button>Wednesday</button></div>
-                <div><button>Thursday</button></div>
-                <div><button>Friday</button></div>
+                <div><button type="button">Monday</button></div>
+                <div><button type="button">Tuesday</button></div>
+                <div><button type="button">Wednesday</button></div>
+                <div><button type="button">Thursday</button></div>
+                <div><button type="button">Friday</button></div>
                 <div></div>
-                <div><button>Saturday</button></div>
+                <div><button type="button">Saturday</button></div>
                 <div></div>
-                <div><button>Sunday</button></div>
+                <div><button type="button">Sunday</button></div>
                 </div></section>
 
                 {/* This is the submit button where the user submits their information for the next page */}
