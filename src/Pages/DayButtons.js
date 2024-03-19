@@ -38,7 +38,7 @@ function WeatherDays() {
             {/* This is a div that leaves space in between the header and the button grid */}
             <div id={styles.empty}></div>
 
-            <form id={styles.days}>
+            <form id={styles.days}><div>
 
                 {/* This section contains the buttons for the days of the week to be selected */}
                 <section id={styles.buttons}><div id={styles.buttons2}>
@@ -53,12 +53,14 @@ function WeatherDays() {
                 <div><button type="button" className={styles.day} onClick={clicked}>Sunday</button></div>
                 </div></section>
 
+              <div id={styles.formfooter}>
                 <div><button /*type="button"*/ className={styles.submit} /*onClick={clearButton}*/>Clear</button></div>
 
                 {/* This is the submit button where the user submits their information for the next page */}
                 <div><button type="button" className={styles.submit} onClick={handleSubmit}>Submit</button></div>
+              </div>
 
-            </form>
+              </div></form>
 
         </div>
           

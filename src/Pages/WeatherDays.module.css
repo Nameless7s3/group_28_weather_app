@@ -1,48 +1,81 @@
-/* this is a mess rn sorry ! */
-
-
 /* This is applied to the entire webpage */
-body{
+body {
     background-color: rgb(111, 165, 183);
 }
 
-.prompt {display: flex; justify-content: center; align-items: center;
-    align-content: center; flex-direction: column; margin-top: 4vw;}
-/* @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
-p {color: white; font-family: 'Roboto', sans-serif;} */
-#ed {margin: auto; color: #95B9C9; display: flex; justify-content: center; align-items: center;
-    align-content: center; flex-direction: column;}
+/* This styles the header */
+.prompt {
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    align-content: center; 
+    flex-direction: column; 
+    margin-top: 4vw;
+}
 
-#buttons div {display: grid;
+
+/* This styles the buttons of the days of the week */
+#buttons div {
+    display: grid;
     grid-template-columns: repeat(5, auto);
     grid-template-rows: repeat(2, auto);
-    align-items: center; text-align: center;
-    align-content: center; margin-left: 3vw;}
-    
+    align-items: center; 
+    text-align: center;
+    align-content: center;
+}
+
+/* This styles an empty div(could be replaced with a larger margin-top on #days) */
 #empty {height: 75px;}
 
-#buttons2 div button {border-radius: 12px; display: grid; margin: 30px; width: 6rem; background-color: #95B9C9;}
-
-/* This styles the submit button */
-.submit {
-    margin: auto;
-    display: flex; justify-content: center; align-items: center;
-    align-content: center; flex-direction: row; 
-    margin-top: 22rem; 
+/* This styles the individual buttons [1] */
+#buttons2 div button {
+    border-radius: 12px; 
+    display: grid; 
+    margin: 30px; 
     width: 6rem; 
-    border-radius: 12px;
-    font-size: 120%;
-    font-weight: bold;
     background-color: #95B9C9;
 }
 
+/* This styles the individual buttons [2] */
+#buttons2 div button:active {
+    background-color: aliceblue;
+}
+
+/* This styles the form */
 #days {
     margin: auto;
     display: flex;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
     align-content: center;
     margin-top: 75px;
     background-color: rgb(255, 2555, 255, 0);
 }
-#buttons2 div button:active {background-color: aliceblue;}
+
+/* This styles a div containing the submit and clear buttons */
+#formfooter {margin: auto;
+   display: flex;
+   flex-direction: row;
+   justify-content: center;
+   align-items: center;
+   align-content: center;
+}
+
+/* This styles the individual submit and clear buttons(possible className change?) */
+.submit {
+    margin: auto;
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    align-content: center; 
+    flex-direction: row;  
+    width: 6rem;
+    border-radius: 12px;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    margin-top: 2rem;
+    font-size: 120%;
+    font-weight: bold;
+    background-color: #95B9C9;
+}
