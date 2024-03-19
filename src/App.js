@@ -8,9 +8,9 @@ function App() {
     <HashRouter>
       <Routes>
         {/* This does the routing to all the different pages */}
-        <Route path="/" element={<WeatherSetup/>}/>
+        <Route path="/" element={<WeatherDays/>}/>
+        <Route path="/weather_setup" element={<WeatherSetup/>}/>
         <Route path="/weather_page" element={<WeatherPage/>}/>
-        <Route path="/weather_days" element={<WeatherDays/>}/>
       </Routes>
     </HashRouter>
   );

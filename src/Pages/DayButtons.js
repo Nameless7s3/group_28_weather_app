@@ -8,7 +8,7 @@ function WeatherDays() {
 
     const handleSubmit = (event) => {
       event.preventDefault();
-      navigate('../');
+      navigate('../weather_setup');
     };
 
 
