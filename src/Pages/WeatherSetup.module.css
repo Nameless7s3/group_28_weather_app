@@ -34,18 +34,18 @@ body{
 
 /* This styles the location icon in the right grey box, next to the campus finder */
 .LocationPic{
-    position: absolute;
-    top: 2.7rem;
-    left: 59.5rem;
+    position: relative;
+    bottom: 4.5rem;
+    left: 7.5rem;
     width: 3.5rem;
     height: 3.5rem;
 }
 
 /* This styles the timing icon in the left grey box, next to the timings setter */
 .TimingPic{
-    position: absolute;
-    top: 3.1rem;
-    left: 12.5rem;
+    position: relative;
+    bottom: 4.2rem;
+    left: 8.6rem;
     width: 3rem;
     height: 3rem;
 }
