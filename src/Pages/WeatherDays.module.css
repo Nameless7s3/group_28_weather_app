@@ -1,0 +1,48 @@
+/* this is a mess rn sorry ! */
+
+
+/* This is applied to the entire webpage */
+body{
+    background-color: rgb(111, 165, 183);
+}
+
+h1 {display: flex; justify-content: center; align-items: center;
+    align-content: center; flex-direction: column; margin-top: 4vw;}
+/* @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+p {color: white; font-family: 'Roboto', sans-serif;} */
+div h1 {font-size: 2rem; font-weight: 1000;}
+#ed {margin: auto; color: #95B9C9; display: flex; justify-content: center; align-items: center;
+    align-content: center; flex-direction: column;}
+button {background-color: #95B9C9;}
+#buttons div {display: grid;
+    grid-template-columns: repeat(5, auto);
+    grid-template-rows: repeat(2, auto);
+    align-items: center; text-align: center;
+    align-content: center; margin-left: 3vw;}
+    
+#empty {height: 75px;}
+
+#buttons2 div button{border-radius: 12px; display: grid; margin: 30px; width: 6rem;}
+
+/* This styles the submit button */
+.submit {
+    margin: auto;
+    display: flex; justify-content: center; align-items: center;
+    align-content: center; flex-direction: column; 
+    margin-top: 10rem; 
+    width: 6rem; 
+    border-radius: 12px;
+    font-size: 120%;
+    font-weight: bold;
+}
+
+form {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    margin-top: 75px;
+    background-color: rgb(255, 2555, 255, 0);
+}
+button:active {background-color: aliceblue;}
