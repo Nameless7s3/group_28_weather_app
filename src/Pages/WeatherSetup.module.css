@@ -75,8 +75,8 @@ body{
 .slider {
     -webkit-appearance: none;
     width: 430%;
-    height: 7px;
-    border-radius: 5px;
+    height: 0.4375rem;
+    border-radius: 0.3125rem;
     background: black;
     outline: none;
     -webkit-transition: .2s;
@@ -87,13 +87,13 @@ body{
 .slider::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
-    width: 25px;
-    height: 25px;
+    width: 1.5625rem;
+    height: 1.5625rem;
     border-radius: 50%;
     position: relative;
     z-index: 10;
     background: rgb(111, 165, 183);
-    box-shadow: 0 0 0 4px white;
+    box-shadow: 0 0 0 0.25rem white;
     cursor: pointer;
 }
 
@@ -102,8 +102,8 @@ body{
 .slider2 {
     -webkit-appearance: none;
     width: 430%;
-    height: 7px;
-    border-radius: 5px;
+    height: 0.4375rem;
+    border-radius: 0.3125rem;
     background: black;
     outline: none;
     -webkit-transition: .2s;
@@ -115,13 +115,13 @@ body{
 .slider2::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
-    width: 25px;
-    height: 25px;
+    width: 1.5625rem;
+    height: 1.5625rem;
     border-radius: 50%;
     position: relative;
     z-index: 10;
     background: rgb(111, 165, 183);
-    box-shadow: 0 0 0 4px white;
+    box-shadow: 0 0 0 0.25rem white;
     cursor: pointer;
 }
 
@@ -288,7 +288,7 @@ form {
     background-color: white;
     width: 25rem;
     height: 3rem;
-    border-radius: 5px;
+    border-radius: 0.3125rem;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -304,11 +304,11 @@ form {
 /* This section styles the search bar input */
 input[type="search"] {
     all: unset;
-    font: 16px system-ui;
+    font: 1rem system-ui;
     color: black;
     height: 100%;
     width: 100%;
-    padding: 6px 10px;
+    padding: 0.375rem 0.625rem;
 }
 
 /* This styles the text in the search bar */
@@ -321,17 +321,17 @@ input[type="search"] {
 button {
     all: unset;
     cursor: pointer;
-    width: 44px;
-    height: 44px;
+    width: 2.75rem;
+    height: 2.75rem;
 }
   
 /* This styles the search icon button */
 svg {
     color: black;
     fill: currentColor;
-    width: 24px;
-    height: 24px;
-    padding: 10px;
+    width: 1.5rem;
+    height: 1.5rem;
+    padding: 0.625rem;
 }
 
 
