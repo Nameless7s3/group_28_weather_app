@@ -4,18 +4,9 @@ import { useNavigate } from 'react-router-dom';
 
 function clicked(event) {
     const button = event.target;
-    button.style.backgroundColor= "rgb(25, 66, 131)";
-    button.style.color= "white";
+    button.style.backgroundColor= "white";
+    button.style.color= "black";
 }
-
-/* function clearButton(event) {
-    const buttons = document.querySelectorAll(`.${styles.day}`);
-    buttons.forEach(button => {
-        button.style.backgroundColor = "#95B9C9";
-        button.style.color = "white";
-    });
-} 
-Attempted to revert all buttons to original colours but didn't work so Clear button just refreshes the page now.*/
 
 
 function WeatherDays() {
@@ -32,6 +23,10 @@ function WeatherDays() {
       
       <body className={styles.body}>
         <div className={styles.container}>
+
+          <figure>
+            <img src="./images/DayPageIcon.png" alt="weather_icon" className={styles.pic}/>
+          </figure>
         
             <div className={styles.prompt}><h1>Select which days you would like to view forecasts for:</h1></div>
 
@@ -54,7 +49,7 @@ function WeatherDays() {
                 </div></section>
 
               <div id={styles.formfooter}>
-                <div><button /*type="button"*/ className={styles.submit} /*onClick={clearButton}*/>Clear</button></div>
+                <div><button className={styles.submit}>Clear</button></div>
 
                 {/* This is the submit button where the user submits their information for the next page */}
                 <div><button type="button" className={styles.submit} onClick={handleSubmit}>Submit</button></div>

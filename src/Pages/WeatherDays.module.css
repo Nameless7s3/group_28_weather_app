@@ -1,6 +1,20 @@
 /* This is applied to the entire webpage */
 body {
     background-color: rgb(111, 165, 183);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+/* This centres the picture */
+.pic{
+    position: absolute;
+    top: 12%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 14%;
+
 }
 
 /* This styles the header */
@@ -10,7 +24,8 @@ body {
     align-items: center;
     align-content: center; 
     flex-direction: column; 
-    margin-top: 4vw;
+    margin-top: 13rem;
+    margin-bottom: 4rem;
 }
 
 
@@ -19,21 +34,25 @@ body {
     display: grid;
     grid-template-columns: repeat(5, auto);
     grid-template-rows: repeat(2, auto);
-    align-items: center; 
     text-align: center;
-    align-content: center;
 }
 
 /* This styles an empty div(could be replaced with a larger margin-top on #days) */
-#empty {height: 75px;}
+#empty {
+    height: 4.7rem;
+}
 
 /* This styles the individual buttons [1] */
 #buttons2 div button {
-    border-radius: 12px; 
-    display: grid; 
-    margin: 30px; 
-    width: 6rem; 
+    border-radius: 50%; 
+    font-size: 140%;
+    font-weight: bold;
+    margin: 1.875rem; 
+    width: 10rem; 
+    height: 6rem;
+    color: black;
     background-color: #95B9C9;
+    box-shadow: 0.2rem 0.2rem 0.6rem 0.2rem white;
 }
 
 /* This styles the individual buttons [2] */
@@ -49,8 +68,9 @@ body {
     justify-content: center;
     align-items: center;
     align-content: center;
-    margin-top: 75px;
+    margin-top: 4.69rem;
     background-color: rgb(255, 2555, 255, 0);
+
 }
 
 /* This styles a div containing the submit and clear buttons */
@@ -62,7 +82,7 @@ body {
    align-content: center;
 }
 
-/* This styles the individual submit and clear buttons(possible className change?) */
+/* This styles the individual submit and clear buttons*/
 .submit {
     margin: auto;
     display: flex; 
@@ -71,11 +91,12 @@ body {
     align-content: center; 
     flex-direction: row;  
     width: 6rem;
-    border-radius: 12px;
+    border-radius: 0.75rem;
     margin-left: 1rem;
     margin-right: 1rem;
     margin-top: 2rem;
     font-size: 120%;
     font-weight: bold;
     background-color: #95B9C9;
+    box-shadow: 0.1rem 0.1rem 0.9rem 0.1rem white;
 }
