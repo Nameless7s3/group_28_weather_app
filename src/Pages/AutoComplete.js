@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import styles from './AutoComplete.module.css';
 
+let global_predictions = new Array()
+
 const Autocomplete = () => {
   // Defining variables for search results
   const [query, setQuery] = useState('');
@@ -62,11 +64,26 @@ const Autocomplete = () => {
   // Function to handle when prediction clicked
   const handlePredictionClick = (prediction) => {
     setSelectedPredictions(prevPredictions => [...prevPredictions, prediction]); // Adds the selected prediction to the selected predictions
+    global_predictions.push(prediction)
+    console.log(global_predictions)
+    for(let i = selectedPredictions.length; i < predictions.length; i++){
+      var currentKey = "selected_campus"
+      localStorage.setItem(currentKey+"_"+i.toString(), prediction.description)
+    }
   };
 
   // Function to remove a place from the selected predictions
   const removePlace = index => {
+    const placeToRemove = selectedPredictions[index]
     setSelectedPredictions(prevPlaces => prevPlaces.filter((place, i) => i !== index)); // Filters out the place at the given index
+    console.log(placeToRemove)
+    for(let i = 0; i < global_predictions.length; i++){
+      if(global_predictions[i] == placeToRemove){
+        console.log("rem at " + i)
+        global_predictions.splice(i, 1)
+      }
+    }
+    console.log(global_predictions)
   };
 
   return (

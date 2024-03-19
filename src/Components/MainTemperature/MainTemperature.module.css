@@ -1,6 +1,6 @@
 .MainTemperatureWrapper{
     grid-area: MainTemp;
-    background-color: beige;
+    background-color: lightgrey;
     width: 20%;
     position: relative;
     left: 20%;
