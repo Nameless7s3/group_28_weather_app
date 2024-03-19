@@ -80,7 +80,7 @@ export default function WeatherData() {
     }, []);
     
 
-    if (futureWeather === null) {
+    if (futureWeather === null || currentWeather === null) {
         // Data is still being fetched
         return <div>Loading weather data...</div>;
     }
@@ -89,7 +89,7 @@ export default function WeatherData() {
     return(
         <div className={styles.WeatherPageContainer}>
             <WeatherHeader className={styles.WeatherHeader} cityName={futureWeather.city.name} uniName={locationParts[0]}/>
-            <MainTemperature currentTemp={currentWeather}/>
+            <MainTemperature currentTemp={currentWeather.main.temp}/>
             <TempTimeScrollBar/>
             <FutureTempsBar/>
         </div>

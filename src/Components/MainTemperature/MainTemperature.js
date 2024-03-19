@@ -1,6 +1,6 @@
 import styles from "./MainTemperature.module.css";
 
-function MainTemperature(){
+function MainTemperature(props){
     return(
         <>
         <div className={styles.MainTemperatureWrapper}>
@@ -8,7 +8,7 @@ function MainTemperature(){
                 <img className={styles.MainTempIcon} src="./images/weather-icon.png" alt="cloudy_icon"/>
             </figure>
             <h1 className={styles.MainTempReading}>
-                13°C
+                {props.currentTemp}°C
             </h1>
         </div></>
     )
