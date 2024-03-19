@@ -1,6 +1,22 @@
-
+import { event } from 'jquery';
 import styles from './WeatherDays.module.css';
 import { useNavigate } from 'react-router-dom';
+
+function clicked(event) {
+    const button = event.target;
+    button.style.backgroundColor= "rgb(25, 66, 131)";
+    button.style.color= "white";
+}
+
+/* function clearButton(event) {
+    const buttons = document.querySelectorAll(`.${styles.day}`);
+    buttons.forEach(button => {
+        button.style.backgroundColor = "#95B9C9";
+        button.style.color = "white";
+    });
+} 
+Attempted to revert all buttons to original colours but didn't work so Clear button just refreshes the page now.*/
+
 
 function WeatherDays() {
 
@@ -10,7 +26,6 @@ function WeatherDays() {
       event.preventDefault();
       navigate('../weather_setup');
     };
-
 
     return (
       <>
@@ -23,23 +38,25 @@ function WeatherDays() {
             {/* This is a div that leaves space in between the header and the button grid */}
             <div id={styles.empty}></div>
 
-            <form>
+            <form id={styles.days}>
 
                 {/* This section contains the buttons for the days of the week to be selected */}
                 <section id={styles.buttons}><div id={styles.buttons2}>
-                <div><button type="button">Monday</button></div>
-                <div><button type="button">Tuesday</button></div>
-                <div><button type="button">Wednesday</button></div>
-                <div><button type="button">Thursday</button></div>
-                <div><button type="button">Friday</button></div>
+                <div><button type="button" className={styles.day} onClick={clicked}>Monday</button></div>
+                <div><button type="button" className={styles.day} onClick={clicked}>Tuesday</button></div>
+                <div><button type="button" className={styles.day} onClick={clicked}>Wednesday</button></div>
+                <div><button type="button" className={styles.day} onClick={clicked}>Thursday</button></div>
+                <div><button type="button" className={styles.day} onClick={clicked}>Friday</button></div>
                 <div></div>
-                <div><button type="button">Saturday</button></div>
+                <div><button type="button" className={styles.day} onClick={clicked}>Saturday</button></div>
                 <div></div>
-                <div><button type="button">Sunday</button></div>
+                <div><button type="button" className={styles.day} onClick={clicked}>Sunday</button></div>
                 </div></section>
 
+                <div><button /*type="button"*/ className={styles.submit} /*onClick={clearButton}*/>Clear</button></div>
+
                 {/* This is the submit button where the user submits their information for the next page */}
-                <button type="button" className={styles.submit} onClick={handleSubmit}>Submit</button>
+                <div><button type="button" className={styles.submit} onClick={handleSubmit}>Submit</button></div>
 
             </form>
 
