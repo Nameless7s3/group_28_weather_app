@@ -1,16 +1,22 @@
 import { useEffect, useState } from "react";
+import WeatherHeader from "../WeatherHeader/WeatherHeader";
+import MainTemperature from "../MainTemperature/MainTemperature";
+import TempTimeScrollBar from "../TempAtTime/TempTimeScrollBar";
+import FutureTempsBar from "../TempsForFutureDays/FutureTempsBar";
+import styles from "../Weather_Data/WeatherPage.module.css";
 
-export function WeatherData() {
-    const [weather, setWeather] = useState(null);
+export default function WeatherData() {
+    const [futureWeather, setFutureWeather] = useState(null);
 
     var country = '';
     var countryState = '';
+    var countryCity = '';
     var countryStateCity = '';
     
     var selectedCampus = localStorage.getItem("selected_campus_0");
     
     var locationParts = selectedCampus.split(",").map(part => part.trim());
-    
+    console.log(locationParts, "doifnsodginsdgoin")
     if (locationParts.length >= 1) {
         country = locationParts[locationParts.length - 1];
     }
@@ -26,30 +32,31 @@ export function WeatherData() {
     console.log("Country:", country);
     console.log("Country + State:", countryState);
     console.log("Country + State + City:", countryStateCity);
+    console.log("Country + City:", )
     
 
 
     console.log(country)
-    const weatherAtCscApiUrl = 'http://api.openweathermap.org/data/2.5/forecast?q='+countryStateCity+'&units=metric&mode=json&appid=30c05f2feb3b0253ed29f27de25f7585'
+    const weatherAtCsApiUrl = 'http://api.openweathermap.org/data/2.5/forecast?q='+countryState+'&units=metric&mode=json&appid=30c05f2feb3b0253ed29f27de25f7585'
 
     useEffect(() => {
         const fetchData = async () => {
             try {
                 // Attempt to fetch weather data with specific location
-                const result = await fetch(weatherAtCscApiUrl);
+                const result = await fetch(weatherAtCsApiUrl);
                 const json = await result.json();
     
                 // Check if the first API call was successful
                 if (json.cod === "200") {
                     // First API call successful, set weather data
-                    setWeather(json);
+                    setFutureWeather(json);
                 } else {
                     // First API call unsuccessful, try with city and country only
-                    const secondUrl = 'http://api.openweathermap.org/data/2.5/forecast?q='+countryState+'&units=metric&mode=json&appid=30c05f2feb3b0253ed29f27de25f7585'
+                    const secondUrl = 'http://api.openweathermap.org/data/2.5/forecast?q='+countryStateCity+'&units=metric&mode=json&appid=30c05f2feb3b0253ed29f27de25f7585'
                     const secondResult = await fetch(secondUrl);
                     const secondJson = await secondResult.json();
                     // Set weather data from second API call
-                    setWeather(secondJson);
+                    setFutureWeather(secondJson);
                 }
             } catch (error) {
                 console.error("Error fetching weather data:", error);
@@ -59,6 +66,17 @@ export function WeatherData() {
     }, []);
     
 
-    console.log(weather)
-    return;
+    if (futureWeather === null) {
+        // Data is still being fetched
+        return <div>Loading weather data...</div>;
+    }
+    console.log(futureWeather)
+    return(
+        <div className={styles.WeatherPageContainer}>
+            <WeatherHeader className={styles.WeatherHeader} cityName={futureWeather.city.name} uniName={locationParts[0]}/>
+            <MainTemperature/>
+            <TempTimeScrollBar/>
+            <FutureTempsBar/>
+        </div>
+    );
 }
