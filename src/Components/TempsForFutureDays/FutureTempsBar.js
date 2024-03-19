@@ -16,7 +16,7 @@ const weatherData ={
 };
 
 function FutureTempsBar(){
-    return(<><WeatherData/>
+    return(<>
     <div className={styles.FutureTempsBarContainer}>
         <TempForFutureDay day={weatherData.day01Name} temperature={weatherData.day01Temp} className={styles.FutureTemp}/>
         <TempForFutureDay day={weatherData.day02Name} temperature={weatherData.day02Temp} className={styles.FutureTemp}/>

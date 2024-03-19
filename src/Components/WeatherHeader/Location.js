@@ -1,9 +1,9 @@
-function Location() {
+function Location(props) {
     return (
         <>
             <div>
-                <h1>Mile End</h1><br/>
-                <h2>London</h2>
+                <h1>{props.uniName}</h1><br/>
+                <h2>{props.cityName}</h2>
             </div>
         </>
     )
