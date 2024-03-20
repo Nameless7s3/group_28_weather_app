@@ -6,10 +6,17 @@ import { useNavigate } from 'react-router-dom';
 
 
 function WeatherSetup() {
-
+  const [globalPredictions, setGlobalPredictions] = useState([]); // State for selected predictions
   const navigate = useNavigate();
+  
   const handleSubmit = (event) => {
     event.preventDefault();
+
+    if (globalPredictions.length == 0) {
+      alert("Please select a university from the search results.");
+      return; // Don't proceed with submission
+    }
+
     navigate('../weather_page');
   };
   
@@ -139,7 +146,7 @@ function WeatherSetup() {
         
 
           {/* This calls the page where the search results are made using an API */}
-          <Autocomplete />
+          <Autocomplete setGlobalPredictions={setGlobalPredictions}/>
           {/* This is the submit button where the user submits their information for the next page */}
           <button type="button" className={styles.submitB} required onClick={handleSubmit}>Submit</button>
           

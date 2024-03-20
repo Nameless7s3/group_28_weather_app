@@ -3,7 +3,7 @@ import styles from './AutoComplete.module.css';
 
 let global_predictions = new Array()
 
-const Autocomplete = () => {
+const Autocomplete = ({setGlobalPredictions }) => {
   // Defining variables for search results
   const [query, setQuery] = useState('');
   const [predictions, setPredictions] = useState([]);
@@ -66,6 +66,7 @@ const Autocomplete = () => {
     setSelectedPredictions(prevPredictions => [...prevPredictions, prediction]); // Adds the selected prediction to the selected predictions
     global_predictions.push(prediction)
     console.log(global_predictions)
+    setGlobalPredictions((prevPredictions) => [...prevPredictions, prediction]);
     for(let i = selectedPredictions.length; i < predictions.length; i++){
       var currentKey = "selected_campus"
       localStorage.setItem(currentKey+"_"+i.toString(), prediction.description)
