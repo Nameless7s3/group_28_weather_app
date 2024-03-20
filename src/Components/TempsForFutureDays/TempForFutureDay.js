@@ -6,7 +6,7 @@ function TempForFutureDay(props) {
         <div className={styles.futureCon}>
             <h2>{props.day}</h2>
             <figure>
-                <img className={styles.futureIcons} src="./images/weather-icon.png" alt="weather_icon"/>
+                <img className={styles.futureIcons} src={props.imageSrc} alt="weather_icon"/>
             </figure>
             <h2 className={styles.futureTemp}>{props.temperature}</h2>
         </div>
