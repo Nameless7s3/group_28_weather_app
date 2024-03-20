@@ -30,7 +30,7 @@
 .sunriseText{
     position: relative;
     top: 22rem;
-    left: 1rem;
+    left: 0rem;
     color: black;
     font-weight: bold;
     font-size: 130%;
@@ -46,7 +46,7 @@
 .sunsetText{
     position: relative;
     top: 22rem;
-    right: 15rem;
+    right: 16rem;
     color: black;
     font-weight: bold;
     font-size: 130%;
