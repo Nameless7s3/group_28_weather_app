@@ -22,32 +22,28 @@
   background-color: white;
 }
 
+/* This styles the text of each search results button */
 .liRes {
-  position: absolute;
-  top: 3rem;
-  left: 0rem;
-  font-size: 70%;
-  list-style: none;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  background-color: white;
   gap: 1.25rem;
+  color: rgb(111, 165, 183);
+  margin-left: -2.5rem;
 }
 
 
-
-/* This styles the text that appear from the search bar */
+/* This styles the psotion of the text that appear from the search bar */
 .results {
   display: flex;
   flex-wrap: wrap;
-  gap: 1.25rem;
+  position: absolute;
+  top: 2.5rem;
+  left: 0rem;
 }
 
 /* This styles the text from the search bar and gets rid of bullet points */
 .searchBar ul {
   list-style-type: none;
   padding: 0;
-  margin: 0;
 }
 
 /* This styles the list items within the search bar */
@@ -67,7 +63,7 @@
   color: rgb(111, 165, 183);
   font-size: 150%;
   position: absolute;
-  top: 12rem;
+  top: 15rem;
   right: 18rem;
   font-weight: bold;
 }
@@ -76,18 +72,20 @@
 .print {
   color: rgb(111, 165, 183);
   position: relative;
-  left: -10rem;
-  top: 17rem;
+  left: 1rem;
+  top: 20rem;
+  
 }
 
 /* This styles the delete button marked x next to every selected campus */
 .delete{
   position: absolute;
-  left: 20rem;
+  left: 30rem;
   bottom: 1rem;
   font-size: 140%;
   color: red;
   background-color: transparent;
+  border: none;
 }
 
 

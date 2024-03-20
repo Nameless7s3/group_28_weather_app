@@ -307,11 +307,12 @@ form {
     all: unset;
     font: 1rem system-ui;
     color: black;
-    background-color: rebeccapurple;
+    background-color: black;
     position: relative;
     border-radius: 0.3125rem;
     height: 100%;
     width: 100%;
+    margin-left: -12rem;
 } */
 
 
@@ -341,13 +342,21 @@ svg {
     padding: 0.625rem;
 }
 
+.searchIcon{
+    position: absolute;
+    left: 25rem;
+    border: none;
+    background-color: transparent;
+}
 
 /* This styles the submit button */
 .submitB {
     color: red;
     position: absolute;
-    top: 30rem;
-    left: 35rem;
+    top: 32rem;
+    left: 33rem;
     font-size: 120%;
     font-weight: bold;
+    border: none;
+    background-color: transparent;
 }
