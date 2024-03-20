@@ -7,7 +7,7 @@ function WeatherHeader(props) {
     return(
         <>
             <div className={styles.WeatherHeader}>
-                <TomorrowTemp className="flexbox_element"/>
+                <TomorrowTemp className="flexbox_element" tmrTemp={props.tmrTemp}/>
                 <Location className="flexbox_element" cityName={props.cityName} uniName={props.uniName}/>
                 <Time className="flexbox_element"/>
             </div>
