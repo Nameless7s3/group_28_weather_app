@@ -180,6 +180,15 @@ export default function WeatherData() {
                 ))}
             </div>
             <FutureTempsBar/>
+            <figure>
+                <img src="./images/Sunrise.png" alt="weather_icon" className={styles.sunrise}/>
+                <figcaption className={styles.sunriseText}>5:31</figcaption>
+            </figure>
+            <figure>
+                <img src="./images/Sunset.png" alt="weather_icon" className={styles.sunset}/>
+                <figcaption className={styles.sunsetText}>20:31</figcaption>
+            </figure>
+            
         </div>
     );
 }
