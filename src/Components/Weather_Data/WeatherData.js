@@ -14,6 +14,18 @@ function parseTimeString(timeStr) {
     return timeObject;
 }
 
+//convert unix time to readable time
+function unixToReadableTime(unixTime) {
+    const time = new Date(unixTime * 1000)
+
+    const timeHours = time.getHours()
+    const timeMins = time.getMinutes().toString().padStart(2, '0');
+
+    const formattedTime = `${timeHours}:${timeMins}`;
+    console.log(timeMins)
+    return formattedTime
+}
+
 export default function WeatherData() {
     const [futureWeather, setFutureWeather] = useState(null);
     const [currentWeather, setCurrentWeather] = useState(null);
@@ -123,13 +135,17 @@ export default function WeatherData() {
         // Data is still being fetched
         return <div>Loading weather data...</div>;
     }
-    console.log(futureWeather)
+    console.log(currentWeather)
 
     var ftrTimeStamps = []
 
     var ftrTimeStampsInRange = []
     var parsedStartTime = parseTimeString(startTime)
     var parsedEndTime = parseTimeString(endTime)
+
+    //dawn and dusk times
+    var sunriseTime = unixToReadableTime(currentWeather.sys.sunrise) + " AM"
+    var sunsetTime = unixToReadableTime(currentWeather.sys.sunset) + " PM"
 
     //add all timestamps to new object
     for (let i=0; i<40; i++) {
@@ -182,11 +198,11 @@ export default function WeatherData() {
             <FutureTempsBar/>
             <figure>
                 <img src="./images/Sunrise.png" alt="weather_icon" className={styles.sunrise}/>
-                <figcaption className={styles.sunriseText}>5:31</figcaption>
+                <figcaption className={styles.sunriseText}>{sunriseTime}</figcaption>
             </figure>
             <figure>
                 <img src="./images/Sunset.png" alt="weather_icon" className={styles.sunset}/>
-                <figcaption className={styles.sunsetText}>20:31</figcaption>
+                <figcaption className={styles.sunsetText}>{sunsetTime}</figcaption>
             </figure>
             
         </div>
