@@ -9,6 +9,11 @@
     ". . . FtrTempsBar"
     ". TempScrollBar . FtrTempsBar"
     ". . . FtrTempsBar";
+    background-image: url(/public/images/Day.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 192vh;
+    height: 98vh;
 }
 
 .WeatherHeader{

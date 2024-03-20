@@ -8,7 +8,7 @@ function TomorrowTemp(props) {
                 <figure>
                     <img src="./images/cloudy_icon.png" alt="weather_icon" className={styles.image}/>
                 </figure>
-                <h3>{props.tmrTemp}°C</h3>
+                <h3 className={styles.tmrwTemp}>{props.tmrTemp}°C</h3>
             </div>
         </>
     )

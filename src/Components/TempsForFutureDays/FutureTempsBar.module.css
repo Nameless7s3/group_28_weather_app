@@ -1,6 +1,8 @@
 .FutureTempsBarContainer{
     grid-area: FtrTempsBar;
-    background-color: lightgrey;
+    background-color: black;
+    opacity: 0.65;
+    color: white;
 }
 
 .FutureTemp{

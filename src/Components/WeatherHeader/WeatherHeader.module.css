@@ -2,7 +2,7 @@
     grid-area: WeatherHeader;
     display: flex;
     gap: 10pc;
-    background-color: lightgrey;
+    background-color: transparent;
     justify-content: center;
 }
 

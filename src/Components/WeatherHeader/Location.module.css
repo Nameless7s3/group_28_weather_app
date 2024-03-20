@@ -1,0 +1,12 @@
+.uni{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 240%;
+    text-align: center;
+}
+
+.city{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-align: center;
+    position: relative;
+    bottom: 1.5rem;
+}
