@@ -26,6 +26,11 @@ function unixToReadableTime(unixTime) {
     return formattedTime
 }
 
+function getSelectedDays() {
+    let selectedDaysDeserialsed = JSON.parse(localStorage.getItem("selectedDays"))
+    return selectedDaysDeserialsed
+}
+
 export default function WeatherData() {
     
     // State variables to store weather data
@@ -36,6 +41,7 @@ export default function WeatherData() {
     var state = '';
     var city = '';
     
+    var selectedDays = getSelectedDays()
     var selectedCampus = localStorage.getItem("selected_campus_0");
     var startTime = localStorage.getItem("startTime")
     var endTime = localStorage.getItem("endTime")
@@ -187,6 +193,8 @@ export default function WeatherData() {
         const time = timeComponents.slice(0, 2).join(':')
         futureTimes.push(time)
     }
+
+    console.log(selectedDays)
 
     // Suggestions based on temperature
     let print = '';
