@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import WeatherHeader from "../WeatherHeader/WeatherHeader";
 import MainTemperature from "../MainTemperature/MainTemperature";
-import TempTimeScrollBar from "../TempAtTime/TempTimeScrollBar";
+import TempAtTime from "../TempAtTime/TempAtTime";
 import FutureTempsBar from "../TempsForFutureDays/FutureTempsBar";
 import styles from "../Weather_Data/WeatherPage.module.css";
+import tempScrollBarStyles from "../TempAtTime/ScrollBar.module.css"
 
 //converts a string holding a time to an actual date
 function parseTimeString(timeStr) {
@@ -103,49 +104,13 @@ export default function WeatherData() {
                 const futureWeatherResult = await fetch(ftrWeatherAtAreaApiUrl);
                 const futureJson = await futureWeatherResult.json();
     
-                // Check if the first API call was successful
-                if (futureJson.cod === "200") {
-                    // First API call successful, set weather data
-                    setFutureWeather(futureJson);
+                setFutureWeather(futureJson);
 
-                    const currentWeatherResult = await fetch(currWeatherAtAreaApiUrl);
-                    const currentJson = await currentWeatherResult.json();
+                const currentWeatherResult = await fetch(currWeatherAtAreaApiUrl);
+                const currentJson = await currentWeatherResult.json();
 
-                    setCurrentWeather(currentJson)
-                    
-                } else {
-                    // Set future weather
-                    // First API call unsuccessful, try with city and country only
-                    const secondFutureWeatherUrl = 'http://api.openweathermap.org/data/2.5/forecast?q='+areaFormat+'&units=metric&mode=json&appid=30c05f2feb3b0253ed29f27de25f7585'
-                    const secondFutureResult = await fetch(secondFutureWeatherUrl);
-                    const secondFutureJson = await secondFutureResult.json();
-
-                    if(secondFutureJson.cod === "200") {
-                        // Set future weather data from second API call
-                        setFutureWeather(secondFutureJson);
-                        
-                        // Set current weather
-                        const secondCurrentWeatherUrl = 'https://api.openweathermap.org/data/2.5/weather?q='+areaFormat+'&units=metric&appid=30c05f2feb3b0253ed29f27de25f7585'
-                        const secondCurrentResult = await fetch(secondCurrentWeatherUrl)
-                        const secondCurrentJson = await secondCurrentResult.json()
-                        // Set future weather data from second API call
-                        setCurrentWeather(secondCurrentJson)
-                    }
-                    else{
-                        //console.log(stateCountry, "ASODIUHSAODIHn")
-                        const thirdFutureWeatherUrl = 'http://api.openweathermap.org/data/2.5/forecast?q='+areaFormat+'&units=metric&mode=json&appid=30c05f2feb3b0253ed29f27de25f7585'
-                        const thirdFutureResult = await fetch(thirdFutureWeatherUrl);
-                        const thirdFutureJson = await thirdFutureResult.json();
-
-                        setFutureWeather(thirdFutureJson)
-
-                        const thirdCurrentWeatherUrl = 'https://api.openweathermap.org/data/2.5/weather?q='+areaFormat+'&units=metric&appid=30c05f2feb3b0253ed29f27de25f7585'
-                        const thirdCurrentResult = await fetch(thirdCurrentWeatherUrl);
-                        const thirdCurrentJson = await thirdCurrentResult.json();
-
-                        setCurrentWeather(thirdCurrentJson)
-                    }
-                }
+                setCurrentWeather(currentJson)
+                
             } catch (error) {
                 console.error("Error fetching weather data:", error);
             }
@@ -170,8 +135,10 @@ export default function WeatherData() {
     for (let i=0; i<40; i++) {
         var currentTimeStamp = new Date(futureWeather.list[i].dt_txt)
         ftrTimeStamps.push(currentTimeStamp)
+
+        //if current timestamp is within specified range, add it to the array
         if(currentTimeStamp >= parsedStartTime && currentTimeStamp <= parsedEndTime) {
-            ftrTimeStampsInRange.push(currentTimeStamp)
+            ftrTimeStampsInRange.push(futureWeather.list[i])
             console.log(parsedStartTime, parsedEndTime, currentTimeStamp, "OOO")
         }
     }
@@ -193,11 +160,25 @@ export default function WeatherData() {
     console.log(`The first index with next day's 12 PM temperature is: ${nextDayIndex}`);
     console.log(`Tomorrow 12 PM temperature is: ${futureWeather.list[nextDayIndex].main.temp}`);*/
 
+    var futureTimes = []
+    for(let i=0; i<ftrTimeStampsInRange.length; i++) {
+        const currentTimestamp = ftrTimeStampsInRange[i].dt_txt
+        const dateTimeSplit = currentTimestamp.split(' ');
+        const timeString = dateTimeSplit[1];
+        const timeComponents = timeString.split(':');
+        const time = timeComponents.slice(0, 2).join(':')
+        futureTimes.push(time)
+    }
+
     return(
         <div className={styles.WeatherPageContainer}>
             <WeatherHeader className={styles.WeatherHeader} cityName={futureWeather.city.name} uniName={locationParts[0]} tmrTemp={futureWeather.list[nextDayIndex].main.temp}/>
             <MainTemperature currentTemp={currentWeather.main.temp}/>
-            <TempTimeScrollBar/>
+            <div className={tempScrollBarStyles.TempTimeScrollBar}>
+                {ftrTimeStampsInRange.map((data, index) => (
+                <TempAtTime time={futureTimes[index]} temp={ftrTimeStampsInRange[index].main.temp}/>
+                ))}
+            </div>
             <FutureTempsBar/>
         </div>
     );

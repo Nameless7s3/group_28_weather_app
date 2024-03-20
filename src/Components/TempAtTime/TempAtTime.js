@@ -1,11 +1,11 @@
-function TempAtTime(){
+function TempAtTime(props){
     return(
         <div>
-            <h2>11:00</h2>
+            <h2>{props.time}</h2>
             <figure>
                 <img src="./weather-icon.png" alt="weather_icon"></img>
             </figure>
-            <h2>10°C</h2>
+            <h2>{props.temp}°C</h2>
         </div>
     )
 }
