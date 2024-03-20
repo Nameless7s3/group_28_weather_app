@@ -186,13 +186,21 @@ export default function WeatherData() {
         futureTimes.push(time)
     }
 
-    
+    let print = '';
+    if (currentWeather.main.temp > 20) {
+        print = "Don't forget to stay hydrated! It's hot outside!";
+    }
+    else if (currentWeather.main.temp > 10) {
+        print = "It's a bit chilly outside, but it's not too bad!";
+    }
+    else {
+        print = "Wrap up warm! It's chilly outside!";
+    }
 
     // Air quality
     let AirQuality = 'Moderate';
 
     if (country === 'GB'){
-       
         AirQuality = 'Good';
     }
 
@@ -214,8 +222,10 @@ export default function WeatherData() {
                 <img src="./images/Sunset.png" alt="weather_icon" className={styles.sunset}/>
                 <figcaption className={styles.sunsetText}>{sunsetTime}</figcaption>
             </figure>
-
+            
+            
             <h1 className={styles.airQuality}>Air Quality: {AirQuality}</h1>
+            <p className={styles.printSuggestions}>{print}</p>
             
         </div>
     );

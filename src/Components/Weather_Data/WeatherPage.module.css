@@ -58,3 +58,14 @@
     top: 33rem;
     left: 11rem;
 }
+
+.printSuggestions{
+    position: relative;
+    top: 1rem;
+    right: 3rem;
+    text-align: center;
+    font-size: 130%;
+    padding-left: 4rem;
+    font-weight: bold;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
