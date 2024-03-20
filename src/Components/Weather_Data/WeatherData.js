@@ -170,6 +170,14 @@ export default function WeatherData() {
         futureTimes.push(time)
     }
 
+    let sunriseTime = '6:02';
+    let sunsetTime = '18:27';
+
+    if (country === 'GB'){
+        sunriseTime = '5:31';
+        sunsetTime = '18:26';
+    }
+
     return(
         <div className={styles.WeatherPageContainer}>
             <WeatherHeader className={styles.WeatherHeader} cityName={futureWeather.city.name} uniName={locationParts[0]} tmrTemp={futureWeather.list[nextDayIndex].main.temp}/>
@@ -182,11 +190,11 @@ export default function WeatherData() {
             <FutureTempsBar/>
             <figure>
                 <img src="./images/Sunrise.png" alt="weather_icon" className={styles.sunrise}/>
-                <figcaption className={styles.sunriseText}>5:31</figcaption>
+                <figcaption className={styles.sunriseText}>{sunriseTime}</figcaption>
             </figure>
             <figure>
                 <img src="./images/Sunset.png" alt="weather_icon" className={styles.sunset}/>
-                <figcaption className={styles.sunsetText}>20:31</figcaption>
+                <figcaption className={styles.sunsetText}>{sunsetTime}</figcaption>
             </figure>
             
         </div>
