@@ -1,0 +1,19 @@
+/* This styles the container of the FutureTempsBar component */
+.futureCon{
+    position: relative;
+    left: 3rem;
+}
+
+/* This styles the weather icons */
+.futureIcons{
+    position: relative;
+    right: 2rem;
+    width: 25%;
+}
+
+/* This styles the temperature text */
+.futureTemp{
+    position: relative;
+    left: 10rem;
+    bottom: 4.2rem;
+}
