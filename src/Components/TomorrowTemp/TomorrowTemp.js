@@ -1,6 +1,6 @@
 import styles from "./TomorrowTemp.module.css";
 
-function TomorrowTemp() {
+function TomorrowTemp(props) {
     return(
         <>
             <div>
@@ -8,7 +8,7 @@ function TomorrowTemp() {
                 <figure>
                     <img src="./images/cloudy_icon.png" alt="weather_icon" className={styles.image}/>
                 </figure>
-                <h3>0°C</h3>
+                <h3>{props.tmrTemp}°C</h3>
             </div>
         </>
     )

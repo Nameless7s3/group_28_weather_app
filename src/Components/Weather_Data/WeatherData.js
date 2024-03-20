@@ -10,34 +10,49 @@ export default function WeatherData() {
     const [currentWeather, setCurrentWeather] = useState(null);
 
     var country = '';
-    var countryState = '';
-    var countryCity = '';
-    var countryStateCity = '';
+    var state = '';
+    var city = '';
     
     var selectedCampus = localStorage.getItem("selected_campus_0");
     
     var locationParts = selectedCampus.split(",").map(part => part.trim());
-    console.log(locationParts, "doifnsodginsdgoin")
+    
+    // Extract country
     if (locationParts.length >= 1) {
         country = locationParts[locationParts.length - 1];
     }
     
+    // Extract state
     if (locationParts.length >= 2) {
-        countryState = locationParts[locationParts.length - 2] + ", "+ country;
+        state = locationParts[locationParts.length - 2];
     }
     
+    // Extract city
     if (locationParts.length >= 3) {
-        countryStateCity = locationParts[locationParts.length - 3] +", "+ countryState;
+        city = locationParts[locationParts.length - 3];
+    }
+    
+    // If city is not available, adjust the indexes
+    if (city === '') {
+        if (locationParts.length >= 2) {
+            city = locationParts[locationParts.length - 2];
+        }
+        if (locationParts.length >= 3) {
+            state = locationParts[locationParts.length - 3];
+        }
     }
     
     console.log("Country:", country);
-    console.log("Country + State:", countryState);
-    console.log("Country + State + City:", countryStateCity);    
+    console.log("State:", state);
+    console.log("City:", city);        
 
+    var countryCity = city + ", " + country
+    var countryStateCity = city + state + country
+    var stateCountry = state + ", "+ country
 
-    console.log(country)
-    const ftrWeatherAtAreaApiUrl = 'http://api.openweathermap.org/data/2.5/forecast?q='+countryState+'&units=metric&mode=json&appid=30c05f2feb3b0253ed29f27de25f7585'
-    const currWeatherAtAreaApiUrl = 'https://api.openweathermap.org/data/2.5/weather?q='+countryState+'&units=metric&appid=30c05f2feb3b0253ed29f27de25f7585'
+    console.log(countryCity + " HERE")
+    const ftrWeatherAtAreaApiUrl = 'http://api.openweathermap.org/data/2.5/forecast?q='+countryCity+'&units=metric&mode=json&appid=30c05f2feb3b0253ed29f27de25f7585'
+    const currWeatherAtAreaApiUrl = 'https://api.openweathermap.org/data/2.5/weather?q='+countryCity+'&units=metric&appid=30c05f2feb3b0253ed29f27de25f7585'
 
     useEffect(() => {
         const fetchData = async () => {
@@ -62,15 +77,32 @@ export default function WeatherData() {
                     const secondFutureWeatherUrl = 'http://api.openweathermap.org/data/2.5/forecast?q='+countryStateCity+'&units=metric&mode=json&appid=30c05f2feb3b0253ed29f27de25f7585'
                     const secondFutureResult = await fetch(secondFutureWeatherUrl);
                     const secondFutureJson = await secondFutureResult.json();
-                    // Set future weather data from second API call
-                    setFutureWeather(secondFutureJson);
 
-                    // Set current weather
-                    const secondCurrentWeatherUrl = 'https://api.openweathermap.org/data/2.5/weather?q='+countryStateCity+'&units=metric&appid=30c05f2feb3b0253ed29f27de25f7585'
-                    const secondCurrentResult = await fetch(secondCurrentWeatherUrl)
-                    const secondCurrentJson = await secondCurrentResult.json()
-                    // Set future weather data from second API call
-                    setCurrentWeather(secondCurrentJson)
+                    if(secondFutureJson.cod === "200") {
+                        // Set future weather data from second API call
+                        setFutureWeather(secondFutureJson);
+                        
+                        // Set current weather
+                        const secondCurrentWeatherUrl = 'https://api.openweathermap.org/data/2.5/weather?q='+countryStateCity+'&units=metric&appid=30c05f2feb3b0253ed29f27de25f7585'
+                        const secondCurrentResult = await fetch(secondCurrentWeatherUrl)
+                        const secondCurrentJson = await secondCurrentResult.json()
+                        // Set future weather data from second API call
+                        setCurrentWeather(secondCurrentJson)
+                    }
+                    else{
+                        //console.log(stateCountry, "ASODIUHSAODIHn")
+                        const thirdFutureWeatherUrl = 'http://api.openweathermap.org/data/2.5/forecast?q='+stateCountry+'&units=metric&mode=json&appid=30c05f2feb3b0253ed29f27de25f7585'
+                        const thirdFutureResult = await fetch(thirdFutureWeatherUrl);
+                        const thirdFutureJson = await thirdFutureResult.json();
+
+                        setFutureWeather(thirdFutureJson)
+
+                        const thirdCurrentWeatherUrl = 'https://api.openweathermap.org/data/2.5/weather?q='+stateCountry+'&units=metric&appid=30c05f2feb3b0253ed29f27de25f7585'
+                        const thirdCurrentResult = await fetch(thirdCurrentWeatherUrl);
+                        const thirdCurrentJson = await thirdCurrentResult.json();
+
+                        setCurrentWeather(thirdCurrentJson)
+                    }
                 }
             } catch (error) {
                 console.error("Error fetching weather data:", error);
@@ -84,11 +116,32 @@ export default function WeatherData() {
         // Data is still being fetched
         return <div>Loading weather data...</div>;
     }
-    //console.log(futureWeather)
-    console.log(currentWeather)
+    console.log(futureWeather)
+
+    var ftrTimeStamps = []
+
+    for (let i=0; i<40; i++) {
+        ftrTimeStamps.push(futureWeather.list[i].dt_txt)
+    }
+
+    //convert collected timestamps into dates and find next day's date
+    const dateObjs = ftrTimeStamps.map((timestamp) => new Date(timestamp))
+    const today = dateObjs[0].getDate();
+    const nextDay = new Date(dateObjs[0]);
+    nextDay.setDate(today + 1);
+
+    nextDay.setHours(12, 0, 0, 0);
+
+    //find the index of the next day's 12 PM temperature
+    const nextDayIndex = dateObjs.findIndex((date) => date.getTime() === nextDay.getTime());
+
+    /*
+    console.log(`The first index with next day's 12 PM temperature is: ${nextDayIndex}`);
+    console.log(`Tomorrow 12 PM temperature is: ${futureWeather.list[nextDayIndex].main.temp}`);*/
+
     return(
         <div className={styles.WeatherPageContainer}>
-            <WeatherHeader className={styles.WeatherHeader} cityName={futureWeather.city.name} uniName={locationParts[0]}/>
+            <WeatherHeader className={styles.WeatherHeader} cityName={futureWeather.city.name} uniName={locationParts[0]} tmrTemp={futureWeather.list[nextDayIndex].main.temp}/>
             <MainTemperature currentTemp={currentWeather.main.temp}/>
             <TempTimeScrollBar/>
             <FutureTempsBar/>
