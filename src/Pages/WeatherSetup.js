@@ -8,7 +8,8 @@ import { useNavigate } from 'react-router-dom';
 function WeatherSetup() {
   const [globalPredictions, setGlobalPredictions] = useState([]); // State for selected predictions
   const navigate = useNavigate();
-  
+
+  // This deals with ensuring the user selects a campus before they can proceed to the next page
   const handleSubmit = (event) => {
     event.preventDefault();
 
@@ -19,8 +20,7 @@ function WeatherSetup() {
 
     navigate('../weather_page');
   };
-  
-  
+
   // This function allows the user to select the time they want to see the weather using the slider
   useEffect(() => {
   // Get the slider and its value element
