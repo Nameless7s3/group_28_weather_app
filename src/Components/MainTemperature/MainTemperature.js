@@ -5,7 +5,7 @@ function MainTemperature(props){
         <>
         <div className={styles.MainTemperatureWrapper}>
             <figure>
-                <img className={styles.MainTempIcon} src="./images/weather-icon.png" alt="cloudy_icon"/>
+                <img className={styles.MainTempIcon} src="./src/images/weather-icon.png" alt="cloudy_icon"/>
             </figure>
             <h1 className={styles.MainTempReading}>
                 {props.currentTemp}°C

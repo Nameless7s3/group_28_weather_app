@@ -25,7 +25,7 @@ function WeatherDays() {
         <div className={styles.container}>
 
           <figure>
-            <img src="./images/DayPageIcon.png" alt="weather_icon" className={styles.pic}/>
+            <img src="../../Images/DayPageIcon.png" alt="weather_icon" className={styles.pic}/>
           </figure>
         
             <div className={styles.prompt}><h1>Select which days you would like to view forecasts for:</h1></div>
