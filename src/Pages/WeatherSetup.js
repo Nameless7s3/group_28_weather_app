@@ -4,9 +4,19 @@ import { FaSearch, FaMapMarkerAlt } from 'react-icons/fa';
 import Autocomplete from './AutoComplete';
 import { useNavigate } from 'react-router-dom';
 
+//converts a string holding a time to an actual date
+function parseTimeString(timeStr) {
+  const [hours, minutes] = timeStr.split(":");
+  const now = new Date(); // Get the current date
+  const timeObject = new Date(now.getFullYear(), now.getMonth(), now.getDate(), hours, minutes);
+  return timeObject;
+}
+
 
 function WeatherSetup() {
   const [globalPredictions, setGlobalPredictions] = useState([]); // State for selected predictions
+  const [startTime, setStartTime] = useState("");
+  const [endTime, setEndTime] = useState("");
   const navigate = useNavigate();
   
   const handleSubmit = (event) => {
@@ -16,6 +26,14 @@ function WeatherSetup() {
       alert("Please select a university from the search results.");
       return; // Don't proceed with submission
     }
+
+    if(parseTimeString(startTime) >= parseTimeString(endTime)) {
+      alert("Please select a valid time range.");
+      return;
+    }
+
+    localStorage.setItem("startTime", startTime)
+    localStorage.setItem("endTime", endTime)
 
     navigate('../weather_page');
   };
@@ -31,6 +49,7 @@ function WeatherSetup() {
     if (slider && value) {
       slider.addEventListener('input', function() {
         value.textContent = slider.value + ":00";
+        setStartTime(value.textContent)
       });
 
       value.textContent = slider.value + ":00";
@@ -51,6 +70,7 @@ function WeatherSetup() {
     if (slider2 && value) {
       slider2.addEventListener('input', function() {
         value.textContent = slider2.value + ":00";
+        setEndTime(value.textContent)
     });
       
       value.textContent = slider2.value + ":00";

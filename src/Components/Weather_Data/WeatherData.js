@@ -5,6 +5,14 @@ import TempTimeScrollBar from "../TempAtTime/TempTimeScrollBar";
 import FutureTempsBar from "../TempsForFutureDays/FutureTempsBar";
 import styles from "../Weather_Data/WeatherPage.module.css";
 
+//converts a string holding a time to an actual date
+function parseTimeString(timeStr) {
+    const [hours, minutes] = timeStr.split(":");
+    const now = new Date(); // Get the current date
+    const timeObject = new Date(now.getFullYear(), now.getMonth(), now.getDate(), hours, minutes);
+    return timeObject;
+}
+
 export default function WeatherData() {
     const [futureWeather, setFutureWeather] = useState(null);
     const [currentWeather, setCurrentWeather] = useState(null);
@@ -14,25 +22,26 @@ export default function WeatherData() {
     var city = '';
     
     var selectedCampus = localStorage.getItem("selected_campus_0");
-    
+    var startTime = localStorage.getItem("startTime")
+    var endTime = localStorage.getItem("endTime")
     var locationParts = selectedCampus.split(",").map(part => part.trim());
     
-    // Extract country
+    //extract country
     if (locationParts.length >= 1) {
         country = locationParts[locationParts.length - 1];
     }
     
-    // Extract state
+    //extract state
     if (locationParts.length >= 2) {
         state = locationParts[locationParts.length - 2];
     }
     
-    // Extract city
+    //extract city
     if (locationParts.length >= 3) {
         city = locationParts[locationParts.length - 3];
     }
     
-    // If city is not available, adjust the indexes
+    //if city is not available, adjust the indexes
     if (city === '') {
         if (locationParts.length >= 2) {
             city = locationParts[locationParts.length - 2];
@@ -41,16 +50,17 @@ export default function WeatherData() {
             state = locationParts[locationParts.length - 3];
         }
     }
-    
+
+    /*
     console.log("Country:", country);
     console.log("State:", state);
-    console.log("City:", city);        
+    console.log("City:", city); */
 
     var countryCity = city + ", " + country
-    var countryStateCity = city + state + country
+    var countryStateCity = city +", "+ state +", "+ country
     var stateCountry = state + ", "+ country
 
-    console.log(countryCity + " HERE")
+    console.log(countryStateCity, startTime, "to", endTime)
     const ftrWeatherAtAreaApiUrl = 'http://api.openweathermap.org/data/2.5/forecast?q='+countryCity+'&units=metric&mode=json&appid=30c05f2feb3b0253ed29f27de25f7585'
     const currWeatherAtAreaApiUrl = 'https://api.openweathermap.org/data/2.5/weather?q='+countryCity+'&units=metric&appid=30c05f2feb3b0253ed29f27de25f7585'
 
@@ -120,9 +130,21 @@ export default function WeatherData() {
 
     var ftrTimeStamps = []
 
+    var ftrTimeStampsInRange = []
+    var parsedStartTime = parseTimeString(startTime)
+    var parsedEndTime = parseTimeString(endTime)
+
+    //add all timestamps to new object
     for (let i=0; i<40; i++) {
-        ftrTimeStamps.push(futureWeather.list[i].dt_txt)
+        var currentTimeStamp = new Date(futureWeather.list[i].dt_txt)
+        ftrTimeStamps.push(currentTimeStamp)
+        if(currentTimeStamp >= parsedStartTime && currentTimeStamp <= parsedEndTime) {
+            ftrTimeStampsInRange.push(currentTimeStamp)
+            console.log(parsedStartTime, parsedEndTime, currentTimeStamp, "OOO")
+        }
     }
+
+    console.log(ftrTimeStampsInRange, "Timestamps in start to end range")
 
     //convert collected timestamps into dates and find next day's date
     const dateObjs = ftrTimeStamps.map((timestamp) => new Date(timestamp))
