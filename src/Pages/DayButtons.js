@@ -12,7 +12,8 @@ const selectedDays = {
   sunday: false
 }
 
-function clicked(event) {
+// This function changes the color of the button when it is clicked
+function clicked(event) { 
     const button = event.target;
     button.style.backgroundColor= "white";
     button.style.color= "black";
@@ -21,11 +22,11 @@ function clicked(event) {
     console.log(selectedDays)
 }
 
-
 function WeatherDays() {
 
     const navigate = useNavigate();
 
+    // This function is called when the user clicks the submit button
     const handleSubmit = (event) => {
       event.preventDefault();
 
@@ -43,7 +44,7 @@ function WeatherDays() {
         <div className={styles.container}>
 
           <figure>
-            <img src="./images/DayPageIcon.png" alt="weather_icon" className={styles.pic}/>
+            <img src="../images/DayPageIcon.png" alt="weather_icon" className={styles.pic}/>
           </figure>
         
             <div className={styles.prompt}><h1>Select which days you would like to view forecasts for:</h1></div>

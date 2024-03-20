@@ -1,3 +1,4 @@
+/* This styles the container of the FutureTempsBar component */
 .FutureTempsBarContainer{
     grid-area: FtrTempsBar;
     background-color: black;
@@ -5,6 +6,7 @@
     color: white;
 }
 
+/* This styles the FutureTemp component */
 .FutureTemp{
     position: relative;
     background-color: antiquewhite;

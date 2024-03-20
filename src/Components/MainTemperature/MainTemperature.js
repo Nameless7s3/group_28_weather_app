@@ -1,5 +1,6 @@
 import styles from "./MainTemperature.module.css";
 
+// Main temperature component
 function MainTemperature(props){
     return(
         <>

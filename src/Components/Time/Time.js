@@ -1,5 +1,6 @@
 import styles from './Time.module.css';
 
+// This component displays the current time
 function Time() {
     return(
         <>
@@ -13,6 +14,7 @@ function Time() {
     )
 }
 
+// Function to get the current time
 function getCurrentTime(){
     var currentDate = new Date();
     var formattedMinute = currentDate.getMinutes() < 10 ? "0" + currentDate.getMinutes() : currentDate.getMinutes();

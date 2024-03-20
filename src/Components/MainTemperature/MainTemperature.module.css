@@ -1,3 +1,4 @@
+/* Styles the main temperature wrapper */
 .MainTemperatureWrapper{
     grid-area: MainTemp;
     background-color: transparent;
@@ -6,6 +7,7 @@
     left: 15%;
 }
 
+/* Styles the main temperature icon */
 .MainTempIcon{
     justify-self: center;
     width: 10em;
@@ -13,9 +15,9 @@
     right: 45%;
 }
 
+/* Styles the main temperature reading */
 .MainTempReading{
     justify-self: center;
     position: relative;
-   
     text-align: center;
 }

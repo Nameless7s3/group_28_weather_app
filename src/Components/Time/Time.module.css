@@ -1,3 +1,4 @@
+/* Styles the time text */
 .Time{
     display: flex;
     justify-content: center;
@@ -5,6 +6,7 @@
     flex-direction: column;
 }
 
+/* Styles the time icon */
 .image{
     width: 3pc;
 }

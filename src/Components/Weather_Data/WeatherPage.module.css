@@ -1,3 +1,4 @@
+/* This is the main layout of the page */
 .WeatherPageContainer{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -16,26 +17,24 @@
     height: 98vh;
 }
 
-.WeatherHeader{
-    position: relative;
-    color: red;
-}
-
+/* Styles the sunrise icon */
 .sunrise{
     width: 25%;
     position: relative;
     top: 30rem;
 }
 
+/* Styles the sunrise text */
 .sunriseText{
     position: relative;
     top: 22rem;
-    left: 1rem;
+    left: 0rem;
     color: black;
     font-weight: bold;
     font-size: 130%;
 }
 
+/* Styles the sunset icon */
 .sunset{
     width: 25%;
     position: relative;
@@ -43,11 +42,32 @@
     right: 16rem;
 }
 
+/* Styles the sunset text */
 .sunsetText{
     position: relative;
     top: 22rem;
-    right: 15rem;
+    right: 16rem;
     color: black;
     font-weight: bold;
     font-size: 130%;
+}
+
+/* Styles the air quality text */
+.airQuality{
+    font-size: 130%;
+    position: relative;
+    top: 33rem;
+    left: 6rem;
+}
+
+/* Styles the weather predictions suggestions */
+.printSuggestions{
+    position: relative;
+    top: 1rem;
+    right: 3rem;
+    text-align: center;
+    font-size: 130%;
+    padding-left: 4rem;
+    font-weight: bold;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }

@@ -1,3 +1,4 @@
+// Component to display temperature at a particular time
 function TempAtTime(props){
     return(
         <div>

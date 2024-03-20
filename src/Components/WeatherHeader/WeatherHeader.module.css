@@ -1,3 +1,4 @@
+/* Styles the header where the components are displayed */
 .WeatherHeader{
     grid-area: WeatherHeader;
     display: flex;
@@ -6,6 +7,7 @@
     justify-content: center;
 }
 
+/* Styles the flexbox elements */
 .WeatherHeader, .flexbox_element{
     margin: 1pc;
 }
