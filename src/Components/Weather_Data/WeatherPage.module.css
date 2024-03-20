@@ -51,3 +51,10 @@
     font-weight: bold;
     font-size: 130%;
 }
+
+.airQuality{
+    font-size: 130%;
+    position: relative;
+    top: 33rem;
+    left: 11rem;
+}

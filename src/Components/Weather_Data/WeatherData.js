@@ -170,12 +170,17 @@ export default function WeatherData() {
         futureTimes.push(time)
     }
 
+    // Sunrise and sunset times
     let sunriseTime = '6:02';
     let sunsetTime = '18:27';
+
+    // Air quality
+    let AirQuality = 'Moderate';
 
     if (country === 'GB'){
         sunriseTime = '5:31';
         sunsetTime = '18:26';
+        AirQuality = 'Good';
     }
 
     return(
@@ -196,6 +201,8 @@ export default function WeatherData() {
                 <img src="./images/Sunset.png" alt="weather_icon" className={styles.sunset}/>
                 <figcaption className={styles.sunsetText}>{sunsetTime}</figcaption>
             </figure>
+
+            <h1 className={styles.airQuality}>Air Quality: {AirQuality}</h1>
             
         </div>
     );
