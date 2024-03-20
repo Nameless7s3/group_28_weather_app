@@ -2,10 +2,23 @@ import { event } from 'jquery';
 import styles from './WeatherDays.module.css';
 import { useNavigate } from 'react-router-dom';
 
+const selectedDays = {
+  monday: false,
+  tuesday: false,
+  wednesday: false,
+  thursday: false,
+  friday: false,
+  saturday: false,
+  sunday: false
+}
+
 function clicked(event) {
     const button = event.target;
     button.style.backgroundColor= "white";
     button.style.color= "black";
+    const dayClicked = button.textContent.toLowerCase()
+    selectedDays[dayClicked] = true
+    console.log(selectedDays)
 }
 
 
@@ -15,6 +28,11 @@ function WeatherDays() {
 
     const handleSubmit = (event) => {
       event.preventDefault();
+
+      //add to local storage
+      let selectedDaysSerialised = JSON.stringify(selectedDays)
+      localStorage.setItem("selectedDays", selectedDaysSerialised)
+      
       navigate('../weather_setup');
     };
 

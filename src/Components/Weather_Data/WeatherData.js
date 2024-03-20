@@ -26,6 +26,11 @@ function unixToReadableTime(unixTime) {
     return formattedTime
 }
 
+function getSelectedDays() {
+    let selectedDaysDeserialsed = JSON.parse(localStorage.getItem("selectedDays"))
+    return selectedDaysDeserialsed
+}
+
 export default function WeatherData() {
     const [futureWeather, setFutureWeather] = useState(null);
     const [currentWeather, setCurrentWeather] = useState(null);
@@ -34,6 +39,7 @@ export default function WeatherData() {
     var state = '';
     var city = '';
     
+    var selectedDays = getSelectedDays()
     var selectedCampus = localStorage.getItem("selected_campus_0");
     var startTime = localStorage.getItem("startTime")
     var endTime = localStorage.getItem("endTime")
@@ -185,6 +191,8 @@ export default function WeatherData() {
         const time = timeComponents.slice(0, 2).join(':')
         futureTimes.push(time)
     }
+
+    console.log(selectedDays)
 
     return(
         <div className={styles.WeatherPageContainer}>
