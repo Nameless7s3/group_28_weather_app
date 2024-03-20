@@ -1,5 +1,6 @@
 import styles from './Location.module.css'
 
+// This component displays the location of the campus
 function Location(props) {
     return (
         <>

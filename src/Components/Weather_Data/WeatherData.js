@@ -27,6 +27,8 @@ function unixToReadableTime(unixTime) {
 }
 
 export default function WeatherData() {
+    
+    // State variables to store weather data
     const [futureWeather, setFutureWeather] = useState(null);
     const [currentWeather, setCurrentWeather] = useState(null);
 
@@ -92,7 +94,7 @@ export default function WeatherData() {
         }
     }
 
-    
+    // Format from campus selection
     console.log("Country:", country);
     console.log("State or street:", state);
     console.log("City:", city); 
@@ -104,7 +106,7 @@ export default function WeatherData() {
         }
     }
 
-
+    // APIs linkage
     console.log(areaFormat, startTime, "to", endTime)
     const ftrWeatherAtAreaApiUrl = 'http://api.openweathermap.org/data/2.5/forecast?q='+areaFormat+'&units=metric&mode=json&appid=30c05f2feb3b0253ed29f27de25f7585'
     const currWeatherAtAreaApiUrl = 'https://api.openweathermap.org/data/2.5/weather?q='+areaFormat+'&units=metric&appid=30c05f2feb3b0253ed29f27de25f7585'
@@ -186,6 +188,7 @@ export default function WeatherData() {
         futureTimes.push(time)
     }
 
+    // Suggestions based on temperature
     let print = '';
     if (currentWeather.main.temp > 20) {
         print = "Don't forget to stay hydrated! It's hot outside!";
@@ -205,6 +208,7 @@ export default function WeatherData() {
     }
 
     return(
+        // Puts together all components on this page
         <div className={styles.WeatherPageContainer}>
             <WeatherHeader className={styles.WeatherHeader} cityName={futureWeather.city.name} uniName={locationParts[0]} tmrTemp={futureWeather.list[nextDayIndex].main.temp}/>
             <MainTemperature currentTemp={currentWeather.main.temp}/>
@@ -214,6 +218,8 @@ export default function WeatherData() {
                 ))}
             </div>
             <FutureTempsBar/>
+
+            {/* Images and text for sunrise, sunset, and air quality */}
             <figure>
                 <img src="./images/Sunrise.png" alt="weather_icon" className={styles.sunrise}/>
                 <figcaption className={styles.sunriseText}>{sunriseTime}</figcaption>
@@ -222,7 +228,6 @@ export default function WeatherData() {
                 <img src="./images/Sunset.png" alt="weather_icon" className={styles.sunset}/>
                 <figcaption className={styles.sunsetText}>{sunsetTime}</figcaption>
             </figure>
-            
             
             <h1 className={styles.airQuality}>Air Quality: {AirQuality}</h1>
             <p className={styles.printSuggestions}>{print}</p>

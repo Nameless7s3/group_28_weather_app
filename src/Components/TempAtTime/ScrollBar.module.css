@@ -1,3 +1,4 @@
+/* This styles the TempAtTime component's scrollbar */
 .TempTimeScrollBar{
     grid-area: TempScrollBar;
     display: flex;

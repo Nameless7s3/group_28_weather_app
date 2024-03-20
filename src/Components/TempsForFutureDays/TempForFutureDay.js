@@ -1,3 +1,4 @@
+// This displays the temperature for the future days by taking the day and temperature as props
 function TempForFutureDay(props) {
     return(
         <div>

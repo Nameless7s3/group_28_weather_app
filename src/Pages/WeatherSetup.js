@@ -4,7 +4,7 @@ import { FaSearch, FaMapMarkerAlt } from 'react-icons/fa';
 import Autocomplete from './AutoComplete';
 import { useNavigate } from 'react-router-dom';
 
-//converts a string holding a time to an actual date
+//Converts a string holding a time to an actual date
 function parseTimeString(timeStr) {
   const [hours, minutes] = timeStr.split(":");
   const now = new Date(); // Get the current date
@@ -12,7 +12,7 @@ function parseTimeString(timeStr) {
   return timeObject;
 }
 
-
+// This initialises the variables needed for the page
 function WeatherSetup() {
   const now = "24:00";
   const [globalPredictions, setGlobalPredictions] = useState([]); // State for selected predictions
@@ -34,6 +34,7 @@ function WeatherSetup() {
       return;
     }
 
+    // Stores time range in local storage
     localStorage.setItem("startTime", startTime)
     localStorage.setItem("endTime", endTime)
 
@@ -165,7 +166,6 @@ function WeatherSetup() {
           
           <button type="button" className={styles.searchIcon}><svg viewBox="0 0 1024 1024"><path class="path1" d="M848.471 928l-263.059-263.059c-48.941 36.706-110.118 55.059-177.412 55.059-171.294 0-312-140.706-312-312s140.706-312 312-312c171.294 0 312 140.706 312 312 0 67.294-24.471 128.471-55.059 177.412l263.059 263.059-79.529 79.529zM189.623 408.078c0 121.364 97.091 218.455 218.455 218.455s218.455-97.091 218.455-218.455c0-121.364-103.159-218.455-218.455-218.455-121.364 0-218.455 97.091-218.455 218.455z"></path></svg></button>
         
-
           {/* This calls the page where the search results are made using an API */}
           <Autocomplete setGlobalPredictions={setGlobalPredictions}/>
           {/* This is the submit button where the user submits their information for the next page */}

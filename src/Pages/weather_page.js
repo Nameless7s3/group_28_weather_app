@@ -4,6 +4,7 @@ import TempTimeScrollBar from "../Components/TempAtTime/TempTimeScrollBar";
 import FutureTempsBar from "../Components/TempsForFutureDays/FutureTempsBar";
 import WeatherData from "../Components/Weather_Data/WeatherData";
 
+// Component to display the weather page
 function WeatherPage() {
     return(
         <div>

@@ -2,6 +2,7 @@ import TempForFutureDay from "./TempForFutureDay";
 import {WeatherData} from "../Weather_Data/WeatherData";
 import styles from "./FutureTempsBar.module.css";
 
+// This is the data for the future temperatures
 const weatherData ={
   day01Name : "Monday",
   day01Temp : "11°C",
@@ -14,7 +15,7 @@ const weatherData ={
   day05Name : "Friday",
   day05Temp : "13°C"
 };
-
+// Component to display future temperatures
 function FutureTempsBar(){
     return(<>
     <div className={styles.FutureTempsBarContainer}>

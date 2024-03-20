@@ -1,5 +1,6 @@
 import styles from "./TomorrowTemp.module.css";
 
+// Component to display tomorrow's temperature
 function TomorrowTemp(props) {
     return(
         <>

@@ -3,6 +3,7 @@ import TomorrowTemp from "../TomorrowTemp/TomorrowTemp";
 import Time from "../Time/Time";
 import styles from './WeatherHeader.module.css'
 
+// This component displays the header of the weather page using components imported from other files
 function WeatherHeader(props) {
     return(
         <>

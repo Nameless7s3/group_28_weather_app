@@ -2,17 +2,18 @@ import { event } from 'jquery';
 import styles from './WeatherDays.module.css';
 import { useNavigate } from 'react-router-dom';
 
-function clicked(event) {
+// This function changes the color of the button when it is clicked
+function clicked(event) { 
     const button = event.target;
     button.style.backgroundColor= "white";
     button.style.color= "black";
 }
 
-
 function WeatherDays() {
 
     const navigate = useNavigate();
 
+    // This function is called when the user clicks the submit button
     const handleSubmit = (event) => {
       event.preventDefault();
       navigate('../weather_setup');

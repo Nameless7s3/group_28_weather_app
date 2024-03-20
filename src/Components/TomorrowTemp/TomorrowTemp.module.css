@@ -1,9 +1,11 @@
+/* This styles the image of the weather icon */
 .image{
     width: 3pc;
     position: relative;
     right: 0.6rem;
 }
 
+/* This styles the degree celsius text*/
 .tmrwTemp{
     position: relative;
     left: 1.5rem;
