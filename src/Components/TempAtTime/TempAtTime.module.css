@@ -1,3 +1,4 @@
+/* Styles the container */
 .propTime{
     display: flex;
     flex-direction: column;
@@ -5,8 +6,22 @@
     justify-content: center;
 }
 
-.propicon{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+/* Styles the time text */
+.time{
+    color: white;
+    position: relative;
+    top: 1rem;
+}
+
+/* Styles the temperature text */
+.temp{
+    color: white;
+    position: relative;
+    bottom: 1rem;
+}
+
+/* Styles the weather icon */
+.weatherIconPic{
+    position: relative;
+    left: 7.5rem;
 }
