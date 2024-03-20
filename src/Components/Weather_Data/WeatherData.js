@@ -186,16 +186,13 @@ export default function WeatherData() {
         futureTimes.push(time)
     }
 
-    // Sunrise and sunset times
-    let sunriseTime = '6:02';
-    let sunsetTime = '18:27';
+    
 
     // Air quality
     let AirQuality = 'Moderate';
 
     if (country === 'GB'){
-        sunriseTime = '5:31';
-        sunsetTime = '18:26';
+       
         AirQuality = 'Good';
     }
 
