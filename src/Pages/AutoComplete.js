@@ -102,7 +102,7 @@ const Autocomplete = () => {
       {/* This section creates the search results */}
       <ul className={styles.results}>
         {predictions.map((prediction) => (
-            <button type="button" className={styles.li} key={prediction.place_id} onClick={() => handlePredictionClick(prediction)}>
+            <button type="button" className={styles.liRes} key={prediction.place_id} onClick={() => handlePredictionClick(prediction)}>
                 {prediction.description}
             </button>
         ))}

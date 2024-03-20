@@ -20,7 +20,18 @@
   width: 100%;
   padding: 0.375rem 0.625rem;
   background-color: white;
+}
 
+.liRes {
+  position: absolute;
+  top: 3rem;
+  left: 0rem;
+  font-size: 70%;
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1.25rem;
 }
 
 /* This styles the text that appear from the search bar */
