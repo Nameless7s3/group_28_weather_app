@@ -1,0 +1,68 @@
+/* This positions the background image */
+.backgroundImage{
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+/* This styles the welcome text on the screen */
+.WelcomeText{
+    color: white;
+    font-size: 300%;
+    text-align: center;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+/* This styles the current location text on the screen */
+.currentLocText{
+    color: white;
+    font-size: 200%;
+    text-align: center;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+/* This styles the location image on the screen */
+.locImage {
+    position: absolute;
+    left: 59rem;
+    bottom: 39.8rem;
+    width: 2%;
+}
+
+/* This styles the actual location text on the screen */
+.currentLocAnswer{
+    color: white;
+    font-size: 500%;
+    text-align: center;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+/* This styles the London text on the screen */
+.London{
+    color: white;
+    font-size: 300%;
+    text-align: center;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+/* This styles the start button on the screen */
+.Start{
+    color: white;
+    font-size: 300%;
+    background-color: transparent;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    position: relative;
+    left: 36%;
+    border-radius: 1rem;
+    border: 0.2rem solid white;
+    top: 8rem;
+    cursor: pointer;
+    box-shadow: 0.1rem 0.1rem 0.9rem 0.1rem white;
+}
+
+/* This styles the fill up text on the screen */
+.fillUp{
+    color: white;
+    font-size: 300%;
+    padding-bottom: 5.45rem;
+}

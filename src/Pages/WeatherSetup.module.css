@@ -335,6 +335,8 @@ svg {
     left: 33rem;
     font-size: 120%;
     font-weight: bold;
-    border: none;
-    background-color: transparent;
+    border-radius: 0.75rem;
+    box-shadow: 0.1rem 0.1rem 0.9rem 0.1rem white;
+    border: white;
+    background-color: white;
 }
