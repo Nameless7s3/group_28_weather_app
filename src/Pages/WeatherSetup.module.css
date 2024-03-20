@@ -302,19 +302,6 @@ form {
     left: 52rem;
 }
 
-/* This section styles the search bar input */
-/* input[type="search"] {
-    all: unset;
-    font: 1rem system-ui;
-    color: black;
-    background-color: black;
-    position: relative;
-    border-radius: 0.3125rem;
-    height: 100%;
-    width: 100%;
-    margin-left: -12rem;
-} */
-
 
 /* This styles the text in the search bar */
 ::placeholder {
@@ -322,16 +309,6 @@ form {
     opacity: 0.7; 
 }
 
-/* This styles the buttons for the user to click on the search results */
-/* button {
-    all: unset;
-    cursor: pointer;
-    width: 2.75rem;
-    height: 2.75rem;
-    position: absolute;
-    z-index: 999;
-    left: 22rem;
-} */
   
 /* This styles the search icon button */
 svg {
@@ -342,6 +319,7 @@ svg {
     padding: 0.625rem;
 }
 
+/* This positions the search icon */
 .searchIcon{
     position: absolute;
     left: 25rem;
