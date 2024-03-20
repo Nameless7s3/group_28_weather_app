@@ -6,10 +6,17 @@ import { useNavigate } from 'react-router-dom';
 
 
 function WeatherSetup() {
-
+  const [globalPredictions, setGlobalPredictions] = useState([]); // State for selected predictions
   const navigate = useNavigate();
+  
   const handleSubmit = (event) => {
     event.preventDefault();
+
+    if (globalPredictions.length == 0) {
+      alert("Please select a university from the search results.");
+      return; // Don't proceed with submission
+    }
+
     navigate('../weather_page');
   };
   
@@ -133,20 +140,13 @@ function WeatherSetup() {
         </div>
         
         {/* This allows the user to search for their campus location */}
-        <form id={styles.form} role="search">
-          <input 
-            id={styles.searching} 
-            type="search" 
-            name="q" 
-            placeholder="" 
-            aria-label="Search through site content">
-          </input>
+        <form id={styles.form} role="search">         
           
-          {/* This calls the page where the search results are made using an API */}
-          <Autocomplete />
-          
-          <button type="button" className={styles.button}><svg viewBox="0 0 1024 1024"><path class="path1" d="M848.471 928l-263.059-263.059c-48.941 36.706-110.118 55.059-177.412 55.059-171.294 0-312-140.706-312-312s140.706-312 312-312c171.294 0 312 140.706 312 312 0 67.294-24.471 128.471-55.059 177.412l263.059 263.059-79.529 79.529zM189.623 408.078c0 121.364 97.091 218.455 218.455 218.455s218.455-97.091 218.455-218.455c0-121.364-103.159-218.455-218.455-218.455-121.364 0-218.455 97.091-218.455 218.455z"></path></svg></button>
+          <button type="button" className={styles.searchIcon}><svg viewBox="0 0 1024 1024"><path class="path1" d="M848.471 928l-263.059-263.059c-48.941 36.706-110.118 55.059-177.412 55.059-171.294 0-312-140.706-312-312s140.706-312 312-312c171.294 0 312 140.706 312 312 0 67.294-24.471 128.471-55.059 177.412l263.059 263.059-79.529 79.529zM189.623 408.078c0 121.364 97.091 218.455 218.455 218.455s218.455-97.091 218.455-218.455c0-121.364-103.159-218.455-218.455-218.455-121.364 0-218.455 97.091-218.455 218.455z"></path></svg></button>
         
+
+          {/* This calls the page where the search results are made using an API */}
+          <Autocomplete setGlobalPredictions={setGlobalPredictions}/>
           {/* This is the submit button where the user submits their information for the next page */}
           <button type="button" className={styles.submitB} required onClick={handleSubmit}>Submit</button>
           
