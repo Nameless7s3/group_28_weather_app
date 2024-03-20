@@ -1,4 +1,4 @@
-/* This is applied to the entire webpage */
+This is applied to the entire webpage
 body {
     background-color: rgb(111, 165, 183);
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
@@ -14,7 +14,6 @@ body {
     align-items: center;
     justify-content: center;
     width: 14%;
-
 }
 
 /* This styles the header */
@@ -37,6 +36,7 @@ body {
     text-align: center;
 }
 
+
 /* This styles an empty div(could be replaced with a larger margin-top on #days) */
 #empty {
     height: 4.7rem;
@@ -48,11 +48,13 @@ body {
     font-size: 140%;
     font-weight: bold;
     margin: 1.875rem; 
+    left: 22rem;
     width: 10rem; 
     height: 6rem;
     color: black;
     background-color: #95B9C9;
     box-shadow: 0.2rem 0.2rem 0.6rem 0.2rem white;
+    border: white;
 }
 
 /* This styles the individual buttons [2] */
@@ -69,17 +71,18 @@ body {
     align-items: center;
     align-content: center;
     margin-top: 4.69rem;
-    background-color: rgb(255, 2555, 255, 0);
-
+    background-color: rgb(255, 2555, 255, 0);    
 }
 
+
 /* This styles a div containing the submit and clear buttons */
-#formfooter {margin: auto;
-   display: flex;
-   flex-direction: row;
-   justify-content: center;
-   align-items: center;
-   align-content: center;
+#formfooter {
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
 }
 
 /* This styles the individual submit and clear buttons*/
@@ -99,4 +102,5 @@ body {
     font-weight: bold;
     background-color: #95B9C9;
     box-shadow: 0.1rem 0.1rem 0.9rem 0.1rem white;
+    border: white;
 }

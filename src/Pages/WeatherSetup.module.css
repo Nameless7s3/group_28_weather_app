@@ -322,7 +322,7 @@ form {
 }
 
 /* This styles the buttons for the user to click on the search results */
-button {
+/* button {
     all: unset;
     cursor: pointer;
     width: 2.75rem;
@@ -330,7 +330,7 @@ button {
     position: absolute;
     z-index: 999;
     left: 22rem;
-}
+} */
   
 /* This styles the search icon button */
 svg {

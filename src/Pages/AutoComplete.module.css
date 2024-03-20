@@ -34,24 +34,13 @@
   gap: 1.25rem;
 }
 
+
+
 /* This styles the text that appear from the search bar */
 .results {
   display: flex;
   flex-wrap: wrap;
   gap: 1.25rem;
-    /* position: absolute;
-    color: black;
-
-    left: 0rem;
-    top: 3rem;
-    font-size: 70%;
-
-    list-style: none;
-
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 1.25rem; */
 }
 
 /* This styles the text from the search bar and gets rid of bullet points */
@@ -78,7 +67,7 @@
   color: rgb(111, 165, 183);
   font-size: 150%;
   position: absolute;
-  top: 10rem;
+  top: 12rem;
   right: 18rem;
   font-weight: bold;
 }
