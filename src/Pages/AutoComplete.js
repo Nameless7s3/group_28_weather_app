@@ -106,9 +106,10 @@ const Autocomplete = () => {
                 {prediction.description}
             </button>
         ))}
-      <p>Selected:</p>
 
       </ul>
+
+      <p className={styles.selected}>Selected:</p>
       
       {/* This section creates the selected predictions */}
       {selectedPredictions.map((prediction, index) => (

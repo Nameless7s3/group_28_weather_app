@@ -54,7 +54,7 @@ body{
 .time{
     text-align: left;
     position: relative;
-    padding-top: 5rem;
+    padding-top: 0rem;
     padding-left: 3rem;
 }
 
@@ -303,13 +303,17 @@ form {
 }
 
 /* This section styles the search bar input */
-input[type="search"] {
+/* input[type="search"] {
     all: unset;
     font: 1rem system-ui;
     color: black;
+    background-color: rebeccapurple;
+    position: relative;
+    border-radius: 0.3125rem;
     height: 100%;
     width: 100%;
-}
+} */
+
 
 /* This styles the text in the search bar */
 ::placeholder {
@@ -323,6 +327,9 @@ button {
     cursor: pointer;
     width: 2.75rem;
     height: 2.75rem;
+    position: absolute;
+    z-index: 999;
+    left: 22rem;
 }
   
 /* This styles the search icon button */
