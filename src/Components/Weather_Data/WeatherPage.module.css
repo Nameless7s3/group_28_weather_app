@@ -9,7 +9,7 @@
     ". . . FtrTempsBar"
     ". TempScrollBar . FtrTempsBar"
     ". . . FtrTempsBar";
-    background-image: url(/src/Images/Day.jpg);
+    background-image: url(/public/images/Day.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     width: 192vh;
