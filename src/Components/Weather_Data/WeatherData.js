@@ -215,7 +215,7 @@ export default function WeatherData() {
             </div>
             <FutureTempsBar/>
             <figure>
-                <img src="../images/Sunrise.png" alt="weather_icon" className={styles.sunrise}/>
+                <img src="./images/Sunrise.png" alt="weather_icon" className={styles.sunrise}/>
                 <figcaption className={styles.sunriseText}>{sunriseTime}</figcaption>
             </figure>
             <figure>
