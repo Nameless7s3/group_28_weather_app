@@ -2,5 +2,7 @@
     grid-area: TempScrollBar;
     display: flex;
     justify-content: center;
-    background-color: lightgrey;
+    background-color: black;
+    opacity: 0.65;
+    color: white;
 }
