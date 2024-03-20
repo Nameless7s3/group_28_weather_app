@@ -14,9 +14,10 @@ function parseTimeString(timeStr) {
 
 
 function WeatherSetup() {
+  const now = "24:00";
   const [globalPredictions, setGlobalPredictions] = useState([]); // State for selected predictions
-  const [startTime, setStartTime] = useState("");
-  const [endTime, setEndTime] = useState("");
+  const [startTime, setStartTime] = useState(now);
+  const [endTime, setEndTime] = useState(now);
   const navigate = useNavigate();
 
   // This deals with ensuring the user selects a campus before they can proceed to the next page

@@ -25,10 +25,38 @@ export default function WeatherData() {
     var startTime = localStorage.getItem("startTime")
     var endTime = localStorage.getItem("endTime")
     var locationParts = selectedCampus.split(",").map(part => part.trim());
+    console.log(locationParts)
+
+    var stateCountries = [
+        "USA",
+        "Canada",
+        "Australia",
+        "Brazil",
+        "Mexico",
+        "India",
+        "Germany",
+        "Argentina",
+        "Russia",
+        "Nigeria",
+        "Pakistan",
+        "China",
+        "Indonesia",
+        "South Africa",
+        "Malaysia",
+        "Nigeria",
+        "Philippines",
+        "Thailand",
+        "Venezuela",
+        "Switzerland"
+    ]
     
+
     //extract country
     if (locationParts.length >= 1) {
         country = locationParts[locationParts.length - 1];
+        if(country == "UK"){
+            country = "GB"
+        }
     }
     
     //extract state
@@ -51,18 +79,22 @@ export default function WeatherData() {
         }
     }
 
-    /*
+    
     console.log("Country:", country);
-    console.log("State:", state);
-    console.log("City:", city); */
+    console.log("State or street:", state);
+    console.log("City:", city); 
 
-    var countryCity = city + ", " + country
-    var countryStateCity = city +", "+ state +", "+ country
-    var stateCountry = state + ", "+ country
+    var areaFormat = state + ", " + country
+    for(let i=0; i<stateCountries.length; i++) {
+        if(country == stateCountries[i]) {
+            areaFormat = city + ", " + country
+        }
+    }
 
-    console.log(countryStateCity, startTime, "to", endTime)
-    const ftrWeatherAtAreaApiUrl = 'http://api.openweathermap.org/data/2.5/forecast?q='+countryCity+'&units=metric&mode=json&appid=30c05f2feb3b0253ed29f27de25f7585'
-    const currWeatherAtAreaApiUrl = 'https://api.openweathermap.org/data/2.5/weather?q='+countryCity+'&units=metric&appid=30c05f2feb3b0253ed29f27de25f7585'
+
+    console.log(areaFormat, startTime, "to", endTime)
+    const ftrWeatherAtAreaApiUrl = 'http://api.openweathermap.org/data/2.5/forecast?q='+areaFormat+'&units=metric&mode=json&appid=30c05f2feb3b0253ed29f27de25f7585'
+    const currWeatherAtAreaApiUrl = 'https://api.openweathermap.org/data/2.5/weather?q='+areaFormat+'&units=metric&appid=30c05f2feb3b0253ed29f27de25f7585'
 
     useEffect(() => {
         const fetchData = async () => {
@@ -84,7 +116,7 @@ export default function WeatherData() {
                 } else {
                     // Set future weather
                     // First API call unsuccessful, try with city and country only
-                    const secondFutureWeatherUrl = 'http://api.openweathermap.org/data/2.5/forecast?q='+countryStateCity+'&units=metric&mode=json&appid=30c05f2feb3b0253ed29f27de25f7585'
+                    const secondFutureWeatherUrl = 'http://api.openweathermap.org/data/2.5/forecast?q='+areaFormat+'&units=metric&mode=json&appid=30c05f2feb3b0253ed29f27de25f7585'
                     const secondFutureResult = await fetch(secondFutureWeatherUrl);
                     const secondFutureJson = await secondFutureResult.json();
 
@@ -93,7 +125,7 @@ export default function WeatherData() {
                         setFutureWeather(secondFutureJson);
                         
                         // Set current weather
-                        const secondCurrentWeatherUrl = 'https://api.openweathermap.org/data/2.5/weather?q='+countryStateCity+'&units=metric&appid=30c05f2feb3b0253ed29f27de25f7585'
+                        const secondCurrentWeatherUrl = 'https://api.openweathermap.org/data/2.5/weather?q='+areaFormat+'&units=metric&appid=30c05f2feb3b0253ed29f27de25f7585'
                         const secondCurrentResult = await fetch(secondCurrentWeatherUrl)
                         const secondCurrentJson = await secondCurrentResult.json()
                         // Set future weather data from second API call
@@ -101,13 +133,13 @@ export default function WeatherData() {
                     }
                     else{
                         //console.log(stateCountry, "ASODIUHSAODIHn")
-                        const thirdFutureWeatherUrl = 'http://api.openweathermap.org/data/2.5/forecast?q='+stateCountry+'&units=metric&mode=json&appid=30c05f2feb3b0253ed29f27de25f7585'
+                        const thirdFutureWeatherUrl = 'http://api.openweathermap.org/data/2.5/forecast?q='+areaFormat+'&units=metric&mode=json&appid=30c05f2feb3b0253ed29f27de25f7585'
                         const thirdFutureResult = await fetch(thirdFutureWeatherUrl);
                         const thirdFutureJson = await thirdFutureResult.json();
 
                         setFutureWeather(thirdFutureJson)
 
-                        const thirdCurrentWeatherUrl = 'https://api.openweathermap.org/data/2.5/weather?q='+stateCountry+'&units=metric&appid=30c05f2feb3b0253ed29f27de25f7585'
+                        const thirdCurrentWeatherUrl = 'https://api.openweathermap.org/data/2.5/weather?q='+areaFormat+'&units=metric&appid=30c05f2feb3b0253ed29f27de25f7585'
                         const thirdCurrentResult = await fetch(thirdCurrentWeatherUrl);
                         const thirdCurrentJson = await thirdCurrentResult.json();
 
