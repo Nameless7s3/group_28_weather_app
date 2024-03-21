@@ -14,6 +14,8 @@ You must run this project on Google Chrome else some features will not work.
 
 Also move the /weather_icons folder into /public/images otherwise the weather icons will not show up.
 
+Install the following before you do npm start:
+
 ### `npm install bootstrap jquery`
 
 
