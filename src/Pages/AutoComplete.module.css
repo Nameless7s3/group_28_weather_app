@@ -26,7 +26,7 @@
 .liRes {
   background-color: white;
   gap: 1.25rem;
-  color: rgb(111, 165, 183);
+  color: rgb(117, 178, 211);
   margin-left: -2.5rem;
 }
 
@@ -60,7 +60,7 @@
 
 /* This styles the text for the Selected: heading */
 .selected {
-  color: rgb(111, 165, 183);
+  color: rgb(117, 178, 211);
   font-size: 150%;
   position: absolute;
   top: 15rem;
@@ -70,7 +70,7 @@
 
 /* This styles the selected locations the user chooses which is printed on the screen */
 .print {
-  color: rgb(111, 165, 183);
+  color: rgb(117, 178, 211);
   position: relative;
   left: 1rem;
   top: 20rem;

@@ -15,6 +15,7 @@
     background-size: cover;
     width: 192vh;
     height: 98vh;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 /* Styles the sunrise icon */

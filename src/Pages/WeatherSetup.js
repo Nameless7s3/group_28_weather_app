@@ -101,17 +101,18 @@ function WeatherSetup() {
           <h1 className={styles.time} id={styles.end}>End Time:</h1> {/* This is the lastest time they want to see the weather */}
         </div>
 
-        {/* This displays the sliders for the user to move them both */}
-        <div className={styles.SliderWrap}>
-          <input type="range" min="0" max="24" step="1" className={styles.slider}></input>
-          <span className={styles.value}>00:00</span>
-        </div>
+        {/* This displays the sliders for the user to move them both(slider2 preceeds slider so that startTime slider is 'on top of' endTime slider) */}
 
         <div className={styles.SliderWrap}>
           <input type="range" min="0" max="24" step="1" className={styles.slider2}></input>
           <span className={styles.value2}>00:00</span>
         </div>
-       
+
+        <div className={styles.SliderWrap}>
+          <input type="range" min="0" max="24" step="1" className={styles.slider}></input>
+          <span className={styles.value}>00:00</span>
+        </div>
+
         {/* This prints the little black lines and the timings on the slider */}
         <div className={styles.long} id={styles.one}></div>
         <div className={styles.long} id={styles.seven}></div>

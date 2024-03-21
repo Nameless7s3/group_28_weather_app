@@ -1,6 +1,6 @@
 /* This is applied to the entire webpage */
 body {
-    background-color: rgb(111, 165, 183);
+    background-color: rgb(117, 178, 211)/*rgb(111, 165, 183)*/;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
@@ -52,14 +52,15 @@ body {
     width: 10rem; 
     height: 6rem;
     color: black;
-    background-color: #95B9C9;
+    background-color: rgb(97, 174, 215);
     box-shadow: 0.2rem 0.2rem 0.6rem 0.2rem white;
     border: white;
 }
 
 /* This styles the individual buttons [2] */
 #buttons2 div button:active {
-    background-color: aliceblue;
+    background-color: rgb(219, 242, 255);
+    color: rgb(210, 234, 247);
 }
 
 /* This styles the form */
@@ -100,7 +101,7 @@ body {
     margin-top: 2rem;
     font-size: 120%;
     font-weight: bold;
-    background-color: #95B9C9;
+    background-color: rgb(92, 174, 218);
     box-shadow: 0.1rem 0.1rem 0.9rem 0.1rem white;
     border: white;
 }

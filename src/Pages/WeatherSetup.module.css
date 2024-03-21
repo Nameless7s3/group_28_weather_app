@@ -1,6 +1,6 @@
 /* This is applied to the entire webpage */
 body{
-    background-color: rgb(111, 165, 183);
+    background-color: rgb(117, 178, 211);
 }
 
 /* This creates a grid for the page for organising each section */
@@ -92,7 +92,7 @@ body{
     border-radius: 50%;
     position: relative;
     z-index: 10;
-    background: rgb(111, 165, 183);
+    background: rgb(117, 178, 211);
     box-shadow: 0 0 0 0.25rem white;
     cursor: pointer;
 }
@@ -120,7 +120,7 @@ body{
     border-radius: 50%;
     position: relative;
     z-index: 10;
-    background: rgb(111, 165, 183);
+    background: rgb(117, 178, 211);
     box-shadow: 0 0 0 0.25rem white;
     cursor: pointer;
 }
@@ -266,7 +266,7 @@ body{
 /* This styles the text for the value of the slider of the start time */
 .value{
     position: absolute;
-    color: rgb(111, 165, 183);
+    color: rgb(117, 178, 211);
     bottom: 8.2rem;
     font-size: 520%;
     left: 11rem;
@@ -276,7 +276,7 @@ body{
 /* This section styles the text for the value of the slider of the end time */
 .value2{
     position: absolute;
-    color: rgb(111, 165, 183);
+    color: rgb(117, 178, 211);
     top: 10.6rem;
     font-size: 520%;
     left: 11rem;

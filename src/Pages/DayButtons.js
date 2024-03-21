@@ -16,7 +16,7 @@ const selectedDays = {
 // This function changes the color of the button when it is clicked
 function clicked(event) { 
     const button = event.target;
-    button.style.backgroundColor= "white";
+    button.style.backgroundColor= "rgb(219, 242, 255)";
     button.style.color= "black";
     const dayClicked = button.textContent.toLowerCase()
     selectedDays[dayClicked] = true
