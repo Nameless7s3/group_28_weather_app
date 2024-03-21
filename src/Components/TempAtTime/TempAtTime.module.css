@@ -23,7 +23,8 @@
 /* Styles the weather icon */
 .weatherIconPic{
     position: relative;
-    left: 7.5rem;
+    width: 60%;
+    left: 25%;
 }
 
 .propTime {
