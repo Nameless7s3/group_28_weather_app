@@ -1,6 +1,7 @@
 import { event } from 'jquery';
 import styles from './WeatherDays.module.css';
 import { useNavigate } from 'react-router-dom';
+import React, {useState} from 'react';
 
 const selectedDays = {
   monday: false,
@@ -46,7 +47,7 @@ function WeatherDays() {
           <figure>
             <img src="../images/DayPageIcon.png" alt="weather_icon" className={styles.pic}/>
           </figure>
-        
+
             <div className={styles.prompt}><h1>Select which days you would like to view forecasts for:</h1></div>
 
             {/* This is a div that leaves space in between the header and the button grid */}
