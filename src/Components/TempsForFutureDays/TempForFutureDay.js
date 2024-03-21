@@ -1,4 +1,3 @@
-import styles from "./FutureTempsBar.module.css"
 import styles from "./TempForFutureDays.module.css";
 import React, { useState, useEffect } from 'react';
 
