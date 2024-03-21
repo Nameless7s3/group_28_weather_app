@@ -13,6 +13,8 @@ const selectedDays = {
   sunday: false
 }
 
+var hasSelectedDay = false
+
 // This function changes the color of the button when it is clicked
 function clicked(event) { 
     const button = event.target;
@@ -20,13 +22,13 @@ function clicked(event) {
     button.style.color= "black";
     const dayClicked = button.textContent.toLowerCase()
     selectedDays[dayClicked] = true
+    hasSelectedDay = true
     console.log(selectedDays)
 }
 
 function WeatherDays() {
 
     const navigate = useNavigate();
-    var hasSelectedDay = false
 
     // This function is called when the user clicks the submit button
     const handleSubmit = (event) => {
