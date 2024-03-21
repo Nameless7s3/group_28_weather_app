@@ -241,12 +241,11 @@ export default function WeatherData() {
 
     //bubble sort on selected days weather array
     for(let i=0; i<selectedDaysWeather.length; i++) {
-        let flag = false
         for(let j=0; j<selectedDaysWeather.length-i-1; j++) {
-            if(selectedDaysWeather[i].dt > selectedDaysWeather[i+1].dt) {
-                let temp = selectedDaysWeather[i+1]
-                selectedDaysWeather[i+1] = selectedDaysWeather[i]
-                selectedDaysWeather[i] = temp
+            if(selectedDaysWeather[j].dt > selectedDaysWeather[j+1].dt) {
+                let temp = selectedDaysWeather[j+1]
+                selectedDaysWeather[j+1] = selectedDaysWeather[j]
+                selectedDaysWeather[j] = temp
             }
         }
     }
