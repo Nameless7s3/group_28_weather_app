@@ -253,7 +253,8 @@ export default function WeatherData() {
     for (let i=0; i<selectedDaysWeather.length; i++) {
         let currentSelectedDate = new Date(selectedDaysWeather[i].dt_txt)
         let currentSelectedDayOfWeek = daysOfWeek[currentSelectedDate.getDay()]
-        let formattedDate = currentSelectedDate.getDate() + "/" + currentSelectedDate.getMonth() + "/" + currentSelectedDate.getFullYear();
+        let currentSelectedMonth = currentSelectedDate.getMonth()
+        let formattedDate = currentSelectedDate.getDate() + "/" + (currentSelectedMonth+1) + "/" + currentSelectedDate.getFullYear();
         currentSelectedDayOfWeek = currentSelectedDayOfWeek[0].toUpperCase() + currentSelectedDayOfWeek.slice(1) + " - " + formattedDate;
         selectedDaysArray.push(currentSelectedDayOfWeek)
     }
