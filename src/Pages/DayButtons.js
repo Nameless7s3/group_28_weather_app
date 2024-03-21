@@ -26,10 +26,16 @@ function clicked(event) {
 function WeatherDays() {
 
     const navigate = useNavigate();
+    var hasSelectedDay = false
 
     // This function is called when the user clicks the submit button
     const handleSubmit = (event) => {
       event.preventDefault();
+
+      if(!hasSelectedDay) {
+        console.log("You need to select at least 1 day")
+        return
+      }
 
       //add to local storage
       let selectedDaysSerialised = JSON.stringify(selectedDays)
