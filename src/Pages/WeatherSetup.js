@@ -24,7 +24,7 @@ function WeatherSetup() {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    if (globalPredictions.length == 0) {
+    if (localStorage.getItem("numCampusesSelected") == "0") {
       alert("Please select a university from the search results.");
       return; // Don't proceed with submission
     }

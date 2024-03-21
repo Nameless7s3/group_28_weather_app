@@ -16,14 +16,20 @@ function parseTimeString(timeStr) {
     return timeObject;
 }
 
+const currentDisplayedCampusNo = Number(localStorage.getItem("currentDisplayedCampusNo"))
+const numberOfChosenCampuses = Number(localStorage.getItem("numCampusesSelected"))
+
+console.log(numberOfChosenCampuses, "total campuses chosen NASOPDIN")
+console.log("you are on page", currentDisplayedCampusNo)
+
 function changeCampus(dir) {
-    console.log("clicked button")
     const currentDisplayedCampusNo = Number(localStorage.getItem("currentDisplayedCampusNo"))
-    const numberOfChosenCampuses = Number(localStorage.getItem("numberOfChosenCampuses"))
+    const numberOfChosenCampuses = Number(localStorage.getItem("numCampusesSelected"))
+
     if(currentDisplayedCampusNo <= 0 && dir == -1) {
         return
     }
-    if(currentDisplayedCampusNo == numberOfChosenCampuses && dir == 1) {
+    if(currentDisplayedCampusNo+1 >= numberOfChosenCampuses && dir == 1) {
         return
     }
     localStorage.setItem("currentDisplayedCampusNo", currentDisplayedCampusNo+dir)

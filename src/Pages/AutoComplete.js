@@ -71,20 +71,24 @@ const Autocomplete = ({setGlobalPredictions }) => {
       var currentKey = "selected_campus"
       localStorage.setItem(currentKey+"_"+i.toString(), prediction.description)
     }
+    localStorage.setItem("numCampusesSelected", global_predictions.length.toString())
+    console.log(global_predictions.length)
+    console.log(localStorage.getItem("numCampusesSelected"), "num campuses selected")
   };
 
   // Function to remove a place from the selected predictions
   const removePlace = index => {
     const placeToRemove = selectedPredictions[index]
     setSelectedPredictions(prevPlaces => prevPlaces.filter((place, i) => i !== index)); // Filters out the place at the given index
-    console.log(placeToRemove)
     for(let i = 0; i < global_predictions.length; i++){
-      if(global_predictions[i] == placeToRemove){
-        console.log("rem at " + i)
+      if(global_predictions[i].description == placeToRemove.description){
         global_predictions.splice(i, 1)
+        break
       }
     }
+    localStorage.setItem("numCampusesSelected", global_predictions.length.toString())
     console.log(global_predictions)
+    console.log(localStorage.getItem("numCampusesSelected"), "num campuses selected")
   };
 
   return (
