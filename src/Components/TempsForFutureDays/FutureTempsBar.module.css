@@ -9,5 +9,6 @@
 /* This styles the FutureTemp component */
 .FutureTemp{
     position: relative;
+    left: 40%;
     background-color: antiquewhite;
 }
