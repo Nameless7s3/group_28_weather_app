@@ -42,7 +42,6 @@ function WeatherDays() {
       //add to local storage
       let selectedDaysSerialised = JSON.stringify(selectedDays)
       localStorage.setItem("selectedDays", selectedDaysSerialised)
-      localStorage.setItem("currentDisplayedCampusNo", "0")
 
       navigate('../weather_setup');
     };
