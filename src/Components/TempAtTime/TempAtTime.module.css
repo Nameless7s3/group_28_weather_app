@@ -25,3 +25,12 @@
     position: relative;
     left: 7.5rem;
 }
+
+.propTime {
+    opacity: 0;
+    transition: opacity 3s ease; /* Transition the opacity property over 5 seconds with ease timing function */
+  }
+  
+  .propTime.show {
+    opacity: 1; /* When the 'show' class is added, change opacity to 1 */
+  }
