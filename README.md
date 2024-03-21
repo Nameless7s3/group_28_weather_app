@@ -12,6 +12,8 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 You must run this project on Google Chrome else some features will not work.
 
+Also move the /weather_icons folder into /public/images otherwise the weather icons will not show up.
+
 ### `npm install bootstrap jquery`
 
 
