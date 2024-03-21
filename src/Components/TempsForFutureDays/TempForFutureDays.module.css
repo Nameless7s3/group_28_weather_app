@@ -7,18 +7,25 @@
 /* This styles the weather icons */
 .futureIcons{
     position: relative;
-    right: 2rem;
+    left: 35%;
     width: 25%;
+}
+
+/* This styles the date */
+.futureDate{
+    position: relative;
+    left: 17%;
 }
 
 /* This styles the temperature text */
 .futureTemp{
     position: relative;
-    left: 10rem;
-    bottom: 4.2rem;
+    left: 37%;
 }
 
 .futureCon {
+    background-color: rgba(165, 182, 219, 0.39);
+    width: 80%;
     opacity: 0;
     transition: opacity 3s ease; /* Transition the opacity property over 5 seconds with ease timing function */
   }

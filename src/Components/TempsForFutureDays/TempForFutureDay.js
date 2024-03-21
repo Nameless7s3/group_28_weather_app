@@ -13,11 +13,11 @@ function TempForFutureDay(props) {
 
     return(
         <div /*className={styles.futureCon}*/ className={`${styles.futureCon} ${isVisible ? styles.show : ''}`}>
-            <h2>{props.day}</h2>
+            <h2 className={styles.futureDate}>{props.day}</h2>
             <figure>
                 <img className={styles.futureIcons} src={"/images/weather_icons/" + props.ftrTempWeatherIcon + ".png"} alt={props.ftrTempWeatherDesc}/>
             </figure>
-            <h2>{props.temp}°C</h2>
+            <h2 className={styles.futureTemp}>{props.temp}°C</h2>
             <h2 className={styles.futureTemp}>{props.temperature}</h2>
         </div>
     )
