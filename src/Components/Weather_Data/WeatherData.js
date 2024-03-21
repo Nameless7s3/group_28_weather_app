@@ -6,6 +6,7 @@ import styles from "../Weather_Data/WeatherPage.module.css";
 import tempScrollBarStyles from "../TempAtTime/ScrollBar.module.css"
 import TempForFutureDay from "../TempsForFutureDays/TempForFutureDay";
 import futureTempBarStyles from "../TempsForFutureDays/FutureTempsBar.module.css";
+import buttonStyles from "../Weather_Data/buttonStyles.module.css";
 
 //converts a string holding a time to an actual date
 function parseTimeString(timeStr) {
@@ -13,6 +14,20 @@ function parseTimeString(timeStr) {
     const now = new Date(); // Get the current date
     const timeObject = new Date(now.getFullYear(), now.getMonth(), now.getDate(), hours, minutes);
     return timeObject;
+}
+
+function changeCampus(dir) {
+    console.log("clicked button")
+    const currentDisplayedCampusNo = Number(localStorage.getItem("currentDisplayedCampusNo"))
+    const numberOfChosenCampuses = Number(localStorage.getItem("numberOfChosenCampuses"))
+    if(currentDisplayedCampusNo <= 0 && dir == -1) {
+        return
+    }
+    if(currentDisplayedCampusNo == numberOfChosenCampuses && dir == 1) {
+        return
+    }
+    localStorage.setItem("currentDisplayedCampusNo", currentDisplayedCampusNo+dir)
+    window.location.reload();
 }
 
 //convert unix time to readable time
@@ -35,6 +50,8 @@ function getSelectedDays() {
 
 export default function WeatherData() {
     
+    const currentDisplayedCampusNo = localStorage.getItem("currentDisplayedCampusNo")
+
     // State variables to store weather data
     const [futureWeather, setFutureWeather] = useState(null);
     const [currentWeather, setCurrentWeather] = useState(null);
@@ -44,7 +61,7 @@ export default function WeatherData() {
     var city = '';
     
     var selectedDays = getSelectedDays()
-    var selectedCampus = localStorage.getItem("selected_campus_0");
+    var selectedCampus = localStorage.getItem("selected_campus_" + currentDisplayedCampusNo);
     var startTime = localStorage.getItem("startTime")
     var endTime = localStorage.getItem("endTime")
     var locationParts = selectedCampus.split(",").map(part => part.trim());
@@ -285,6 +302,10 @@ export default function WeatherData() {
                 ftrTempWeatherIcon={selectedDaysWeather[index].weather[0].icon}
                 ftrTempWeatherDesc={selectedDaysWeather[index].weather[0].description}/>
                 ))}
+                <div>
+                    <button className={buttonStyles.ChangeCampusBtn} onClick={() => changeCampus(-1)}>Previous Campus</button>
+                    <button className={buttonStyles.ChangeCampusBtn} onClick={() => changeCampus(1)}>Next Campus</button>
+                </div>
             </div>
 
             {/* Images and text for sunrise, sunset, and air quality */}

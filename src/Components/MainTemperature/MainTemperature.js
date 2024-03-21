@@ -1,6 +1,5 @@
 import styles from "./MainTemperature.module.css";
 import React, { useState, useEffect } from 'react';
-import icons from "../../weather_icons/01d.png"
 
 // Main temperature component
 function MainTemperature(props){

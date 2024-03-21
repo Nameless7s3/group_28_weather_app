@@ -37,6 +37,8 @@ function WeatherSetup() {
     // Stores time range in local storage
     localStorage.setItem("startTime", startTime)
     localStorage.setItem("endTime", endTime)
+    localStorage.setItem("currentDisplayedCampusNo", "0")
+    localStorage.setItem("numberOfChosenCampuses", (globalPredictions.length-1).toString())
 
     navigate('../weather_page');
   };
