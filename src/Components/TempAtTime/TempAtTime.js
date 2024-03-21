@@ -15,7 +15,7 @@ function TempAtTime(props){
         <div /*className={styles.propTime}*/ className={`${styles.propTime} ${isVisible ? styles.show : ''}`}>
             <h2 className={styles.time}>{props.time}</h2>
             <figure>
-                <img className={styles.weatherIconPic} src="./images/weather-icon.png" width='20%' alt="weather_icon"></img>
+                <img className={styles.weatherIconPic} src={"/images/weather_icons/" + props.tmpAtTimeWeatherIcon + ".png"} width='20%' alt={props.tmpAtTimeWeatherDesc}></img>
             </figure>
             <h2 className={styles.temp}>{props.temp}°C</h2>
         </div>

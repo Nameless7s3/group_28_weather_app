@@ -1,6 +1,6 @@
 /* This styles the image of the weather icon */
 .image{
-    width: 3pc;
+    width: 5pc;
     position: relative;
     right: 0.6rem;
 }

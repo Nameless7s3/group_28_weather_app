@@ -15,7 +15,7 @@ function TempForFutureDay(props) {
         <div /*className={styles.futureCon}*/ className={`${styles.futureCon} ${isVisible ? styles.show : ''}`}>
             <h2>{props.day}</h2>
             <figure>
-                <img className={styles.futureIcons} src={props.imageSrc} alt="weather_icon"/>
+                <img className={styles.futureIcons} src={"/images/weather_icons/" + props.ftrTempWeatherIcon + ".png"} alt={props.ftrTempWeatherDesc}/>
             </figure>
             <h2>{props.temp}°C</h2>
             <h2 className={styles.futureTemp}>{props.temperature}</h2>

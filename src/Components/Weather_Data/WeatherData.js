@@ -259,22 +259,31 @@ export default function WeatherData() {
         selectedDaysArray.push(currentSelectedDayOfWeek)
     }
 
-    console.log(selectedDaysWeather[0].main.temp)
-    console.log(selectedDaysArray)
+    console.log(selectedDaysWeather[0].weather[0].description)
+    console.log(futureWeather)
 
     return(
         // Puts together all components on this page
         <div className={styles.WeatherPageContainer}>
-            <WeatherHeader className={styles.WeatherHeader} cityName={futureWeather.city.name} uniName={locationParts[0]} tmrTemp={futureWeather.list[nextDayIndex].main.temp}/>
-            <MainTemperature currentTemp={currentWeather.main.temp}/>
+            <WeatherHeader className={styles.WeatherHeader} cityName={futureWeather.city.name} 
+            uniName={locationParts[0]} tmrTemp={futureWeather.list[nextDayIndex].main.temp} 
+            tmrWeatherIcon={futureWeather.list[nextDayIndex].weather[0].icon}
+            tmrWeatherDesc={futureWeather.list[nextDayIndex].weather[0].description}/>
+            <MainTemperature currentTemp={currentWeather.main.temp}
+            weatherIcon={currentWeather.weather[0].icon}
+            weatherDesc={currentWeather.weather[0].description}/>
             <div className={tempScrollBarStyles.TempTimeScrollBar}>
                 {ftrTimeStampsInRange.map((data, index) => (
-                <TempAtTime time={futureTimes[index]} temp={ftrTimeStampsInRange[index].main.temp}/>
+                <TempAtTime time={futureTimes[index]} temp={ftrTimeStampsInRange[index].main.temp}
+                tmpAtTimeWeatherIcon={ftrTimeStampsInRange[index].weather[0].icon}
+                tmpAtTimeWeatherDesc={ftrTimeStampsInRange[index].weather[0].description}/>
                 ))}
             </div>
             <div className={futureTempBarStyles.FutureTempsBarContainer}>
                 {selectedDaysWeather.map((data, index) => (
-                <TempForFutureDay c="FutureTemp" day={selectedDaysArray[index]} temp={selectedDaysWeather[index].main.temp}/>
+                <TempForFutureDay c="FutureTemp" day={selectedDaysArray[index]} temp={selectedDaysWeather[index].main.temp}
+                ftrTempWeatherIcon={selectedDaysWeather[index].weather[0].icon}
+                ftrTempWeatherDesc={selectedDaysWeather[index].weather[0].description}/>
                 ))}
             </div>
 
