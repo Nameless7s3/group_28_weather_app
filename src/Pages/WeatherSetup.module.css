@@ -299,7 +299,7 @@ form {
 #form{
     position: relative;
     bottom: 37rem;
-    left: 55rem;
+    left: 57rem;
 }
 
 
@@ -332,7 +332,7 @@ svg {
     color: red;
     position: absolute;
     top: 32rem;
-    left: 33rem;
+    left: 30rem;
     font-size: 120%;
     font-weight: bold;
     border-radius: 0.75rem;
