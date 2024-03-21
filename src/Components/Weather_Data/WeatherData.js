@@ -2,9 +2,10 @@ import { useEffect, useState } from "react";
 import WeatherHeader from "../WeatherHeader/WeatherHeader";
 import MainTemperature from "../MainTemperature/MainTemperature";
 import TempAtTime from "../TempAtTime/TempAtTime";
-import FutureTempsBar from "../TempsForFutureDays/FutureTempsBar";
 import styles from "../Weather_Data/WeatherPage.module.css";
 import tempScrollBarStyles from "../TempAtTime/ScrollBar.module.css"
+import TempForFutureDay from "../TempsForFutureDays/TempForFutureDay";
+import futureTempBarStyles from "../TempsForFutureDays/FutureTempsBar.module.css";
 
 //converts a string holding a time to an actual date
 function parseTimeString(timeStr) {
@@ -30,6 +31,7 @@ function getSelectedDays() {
     let selectedDaysDeserialsed = JSON.parse(localStorage.getItem("selectedDays"))
     return selectedDaysDeserialsed
 }
+
 
 export default function WeatherData() {
     
@@ -71,6 +73,7 @@ export default function WeatherData() {
         "Switzerland"
     ]
     
+    var daysOfWeek = ["sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday"];
 
     //extract country
     if (locationParts.length >= 1) {
@@ -143,7 +146,7 @@ export default function WeatherData() {
         // Data is still being fetched
         return <div>Loading weather data...</div>;
     }
-    console.log(currentWeather)
+    console.log(futureWeather)
 
     var ftrTimeStamps = []
 
@@ -152,8 +155,8 @@ export default function WeatherData() {
     var parsedEndTime = parseTimeString(endTime)
 
     //dawn and dusk times
-    var sunriseTime = unixToReadableTime(currentWeather.sys.sunrise) + " AM"
-    var sunsetTime = unixToReadableTime(currentWeather.sys.sunset) + " PM"
+    var sunriseTime = unixToReadableTime(currentWeather.sys.sunrise)
+    var sunsetTime = unixToReadableTime(currentWeather.sys.sunset)
 
     //add all timestamps to new object
     for (let i=0; i<40; i++) {
@@ -215,6 +218,49 @@ export default function WeatherData() {
         AirQuality = 'Good';
     }
 
+    var timestamp = Date.now();
+    var currentDate = new Date(timestamp);
+    var dayOfTheWeek = currentDate.getDay();
+    //console.log("Today is " + daysOfWeek[dayOfTheWeek]);
+
+    var selectedDaysArray = []
+    var selectedDaysWeather = []
+
+    //find the weather information for days that the user selected
+    for(let i=0; i<7; i++) {
+        if(selectedDays[daysOfWeek[i]] == true) 
+        {
+            for(let j=0; j<futureWeather.list.length; j++) {
+                currentDate = new Date(futureWeather.list[j].dt_txt)
+                if(daysOfWeek[currentDate.getDay()] == daysOfWeek[i] && currentDate.getHours() == "12") {
+                    selectedDaysWeather.push(futureWeather.list[j])
+                }
+            }
+        }
+    }
+
+    //bubble sort on selected days weather array
+    for(let i=0; i<selectedDaysWeather.length; i++) {
+        for(let j=0; j<selectedDaysWeather.length-i-1; j++) {
+            if(selectedDaysWeather[j].dt > selectedDaysWeather[j+1].dt) {
+                let temp = selectedDaysWeather[j+1]
+                selectedDaysWeather[j+1] = selectedDaysWeather[j]
+                selectedDaysWeather[j] = temp
+            }
+        }
+    }
+
+    for (let i=0; i<selectedDaysWeather.length; i++) {
+        let currentSelectedDate = new Date(selectedDaysWeather[i].dt_txt)
+        let currentSelectedDayOfWeek = daysOfWeek[currentSelectedDate.getDay()]
+        let formattedDate = currentSelectedDate.getDate() + "/" + currentSelectedDate.getMonth() + "/" + currentSelectedDate.getFullYear();
+        currentSelectedDayOfWeek = currentSelectedDayOfWeek[0].toUpperCase() + currentSelectedDayOfWeek.slice(1) + " - " + formattedDate;
+        selectedDaysArray.push(currentSelectedDayOfWeek)
+    }
+
+    console.log(selectedDaysWeather[0].main.temp)
+    console.log(selectedDaysArray)
+
     return(
         // Puts together all components on this page
         <div className={styles.WeatherPageContainer}>
@@ -225,7 +271,11 @@ export default function WeatherData() {
                 <TempAtTime time={futureTimes[index]} temp={ftrTimeStampsInRange[index].main.temp}/>
                 ))}
             </div>
-            <FutureTempsBar/>
+            <div className={futureTempBarStyles.FutureTempsBarContainer}>
+                {selectedDaysWeather.map((data, index) => (
+                <TempForFutureDay c="FutureTemp" day={selectedDaysArray[index]} temp={selectedDaysWeather[index].main.temp}/>
+                ))}
+            </div>
 
             {/* Images and text for sunrise, sunset, and air quality */}
             <figure>
